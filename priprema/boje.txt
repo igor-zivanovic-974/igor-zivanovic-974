@@ -1,0 +1,6 @@
+tamno plava #054B89
+najtamnija plava #022C51
+svetlo plava #D8EDFF
+pozadina #F3F9FE
+zuta #F3B605
+siva #6D6F71

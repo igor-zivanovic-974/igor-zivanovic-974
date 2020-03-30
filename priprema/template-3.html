@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="./fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./bepro.css" />
+  <link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="./icons/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png" />
+  <link rel="manifest" href="./icons/manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="./icons/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="main">
+      <!-- logo -->
+      <div class="row d-none d-sm-block">
+        <div class="d-flex justify-content-between">
+          <div class="">
+            <img class="logo" src="./bepro-logo.svg" alt="BePro" />
+          </div>
+          <div class="">
+            <div class="d-flex justify-content-end  text-secondary">
+              <div class="grey-box"></div>
+              <div class="social-icons">
+                <i class="fab fa-2x fa-instagram mx-2 mt-4"></i>
+                <i class="fab fa-2x fa-facebook-square mx-2 mt-4"></i>
+              </div>
+              <div class="language-selector">
+                <div class="btn-group mt-4" id="language-selector" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary">Latinica</button>
+                  <button type="button" class="btn btn-outline-secondary">Cirilica</button>
+                  <button type="button" class="btn btn-outline-secondary">En</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- navigation -->
+      <div class="row sticky-top bg-warning">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-lg navbar-light bg-warning text-dark">
+            <a class="navbar-brand" href="#">
+              <img class="logo-small" src="./bepro-logo.svg" alt="BePro" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <div class="input-group">
+
+                  <input type="text" class="form-control" placeholder="Pretraga">
+                  <span class="search-icon"><i class="fas fa-search"></i></span>
+                </div>
+                <!-- <input class="form-control mr-sm-2" type="search" placeholder="..." aria-label="Pretraga" />
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                  <i class="fa fa-search"></i>
+                </button> -->
+              </form>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- slider  -->
+    <div class="w-100 text-white slider-container">
+      <div class="mx-auto">
+        <img src="./slider.png" class="slider">
+      </div>
+    </div>
+
+    <!-- content  -->
+    <div class="main">
+      <div class="row" id="content">
+        <div class="d-flex col-12 justify-content-center my-3">
+          <h2 class="text-secondary">ASORTIMAN</h2>
+        </div>
+
+        <!-- 1-1 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title ">Obrada betona</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1-2 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title">Vertikalni transport i dodatna oprema</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1-3 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title">Proizvodnja, transport i ugradnja betona</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1-4 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title align-text-top">Oprema</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-1 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title">Oplatni sistemi</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-2 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title">Sabijanje tla</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-3 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title">Hidraulicni uredjaji i kompresori</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-4 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title">Agregati i pumpe</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-1 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title">Armiracki program</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-2 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title">Uredjaji i alati za secenje</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-3 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title">Rucni alat i merni uredjaji</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-4 -->
+        <div class="col-md-3 col-sm-12 mt-3">
+          <div class="card mb-3">
+            <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap">
+            <div class="card-body bg-warning">
+              <h5 class="card-title">Zastitna oprema</h5>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- about  -->
+    <div class="w-100 text-white about">
+      <div class="d-flex justify-content-center mb-5">
+        <h2>O NAMA</h2>
+      </div>
+      <div class="main">
+        <div class="row" id="about-us">
+          <div class="col-md-4 p-3">
+            <div class="card bg-transparent mb-3">
+              <!-- <img class="card-img-top" src="./bepro-logo.svg" alt="Card image cap"> -->
+              <i class="fas fa-globe fa-7x mx-auto"></i>
+              <div class="card-body ">
+                <h5 class="card-title border-bottom border-white pb-2">Zastupnstvo svetskih proizvodjaca gradjevinskih masina, alata i opreme</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <button class="btn btn-outline-light">Vise o tome</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-3">
+            <div class="card bg-transparent mb-3">
+              <i class="fa fa-trophy fa-7x mx-auto"></i>
+              <div class="card-body ">
+                <h5 class="card-title border-bottom border-white pb-2">BE PRO BUILD veleprodaja i maloprodaja</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-3">
+            <div class="card bg-transparent mb-3">
+              <i class="fas fa-cogs fa-7x mx-auto"></i>
+              <div class="card-body ">
+                <h5 class="card-title border-bottom border-white pb-2">BE PRO BUILD servis</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <button class="btn btn-outline-light">Vise o tome</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- partneri -->
+    <div class="main">
+      <div class="d-flex justify-content-center mb-5">
+        <h2 class="text-secondary">PARTNERI</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="d-flex ">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+        <div class="d-flex">
+          <img src="./bepro-logo.svg" class="partners border" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- footer  -->
+    <div class="w-100 text-white footer" id="footer">
+      <div class="main">
+        <div class="row">
+          <div class="col-md-4 p-3">
+            <div class="card bg-transparent">
+              <div class="card-body">
+                <h5 class="card-title border-bottom border-white pb-2">Kontakt</h5>
+                <p class="card-text footer-text">
+                  <i class="fa fa-map-marker mr-2"></i>
+                  BE PRO BUILD D.O.O.<br>
+                  <span class="pl-4">ul. Grcica Milenka 39,</span><br>
+                  <span class="pl-4">11000 Beograd, Srbija</span>
+                </p>
+                <p class="card-text footer-text">
+                  <i class="fa fa-phone mr-2"></i>
+                  +381 11 38 20 300
+                </p>
+                <p class="card-text footer-text">
+                  <i class="fa fa-phone mr-2"></i>
+                  +381 11 38 20 301
+                </p>
+                <p class="card-text footer-text">
+                  <i class="fa fa-envelope mr-2"></i>
+                  prodaja@bepro.rs
+                </p>
+                <p class="card-text footer-text">
+                  <i class="fa fa-clock mr-2"></i>
+                  Radno vreme<br>
+                  <span class="pl-4">Ponedeljak - Petak</span><br>
+                  <span class="pl-4">08:00 - 16:00</span>
+                </p>
+                <p class="card-text footer-text">
+                  <i class="fab fa-facebook mr-3"></i>
+                  <i class="fab fa-instagram"></i>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-3">
+            <div class="card bg-transparent">
+              <div class="card-body">
+                <h5 class="card-title border-bottom border-white pb-2">Asortiman</h5>
+                <ul class="list-unstyled">
+                  <li><a class="text-white footer-link" href=""> Obrada betona</a></li>
+                  <li><a class="text-white footer-link" href="">Vertikalni transport i dodatna oprema</a></li>
+                  <li><a class="text-white footer-link" href="">Proizvodnja, transport i ugradnja betona</a></li>
+
+                  <li><a class="text-white footer-link" href="">Oprema</a></li>
+                  <li><a class="text-white footer-link" href="">Oplatni sistemi</a></li>
+                  <li><a class="text-white footer-link" href="">Sabijanje tla</a></li>
+
+                  <li><a class="text-white footer-link" href="">Hidraulicni uredjaji i kompresori</a></li>
+                  <li><a class="text-white footer-link" href="">Agregati i pumpe</a></li>
+                  <li><a class="text-white footer-link" href="">Armiracki program</a></li>
+
+                  <li><a class="text-white footer-link" href="">Uredjaji i alati za secenje</a></li>
+                  <li><a class="text-white footer-link" href="">Rucni alat i merni uredjaji</a></li>
+                  <li><a class="text-white footer-link" href="">Zastitna oprema</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 p-3">
+            <div class="card bg-transparent">
+              <div class="card-body">
+                <h5 class="card-title border-bottom border-white pb-2">Pisite nam</h5>
+                <form>
+                  <input type="text" class="form-control mb-2" name="name" placeholder="Ime i prezime">
+                  <input type="email" class="form-control mb-2" name="email" placeholder="Email">
+                  <textarea name="message" class="form-control mb-2" id="message" cols="10" rows="5" placeholder="Poruka"></textarea>
+                  <button class="btn btn-primary">Posalji</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- copyright  -->
+    <div class="w-100 copyright  text-white text-center">
+      <div class="mx-auto pt-2">
+        &copy; BE PRO BUILD D.O.O. Sva prava zadrzana
+      </div>
+    </div>
+
+  </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</html>
