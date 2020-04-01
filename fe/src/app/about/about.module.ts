@@ -4,15 +4,11 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';
+import { AboutService } from './about.service';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-    AboutRoutingModule
-  ],
-  declarations: [
-    AboutComponent
-  ]
+  imports: [CommonModule, TranslateModule, AboutRoutingModule],
+  declarations: [AboutComponent],
+  providers: [AboutService]
 })
-export class AboutModule { }
+export class AboutModule {}
