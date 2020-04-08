@@ -8,5 +8,5 @@ o nama,
 asortiman, 
 rentiranje, 
 polovna oprema, 
-kontak, 
+kontakt, 
 pretraga

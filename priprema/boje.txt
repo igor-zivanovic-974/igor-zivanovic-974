@@ -1,6 +1,7 @@
-tamno plava #054B89
-najtamnija plava #022C51
+tamno plava #054B89 / rgb(5, 75, 137);
+najtamnija plava #022C51 / rgb(2, 44, 81);
 svetlo plava #D8EDFF
 pozadina #F3F9FE
 zuta #F3B605
-siva #6D6F71
+siva #6D6F71 / 
+narandzasta #ffc107 / rgb(255, 193, 7)
