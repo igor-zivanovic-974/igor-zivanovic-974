@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="stylesheet" href="./bepro-template-v2-2.css">
+
+    <!-- favicon -->
+    <link rel="stylesheet" type="text/css" href="./bepro2.css" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="./icons/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png" />
+    <link rel="manifest" href="./icons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="./icons/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <style>
+        .b {
+            border: solid 1px red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid bg-light">
+        <!-- header -->
+        <div class="w-100 sticky-top bg-light">
+            <nav class=" navbar navbar-expand-xl navbar-light bg-light">
+                <a class=" navbar-brand" href="#">
+                    <img src="./real-images/bepro-logo.png" class="logo" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link btn text-left menu-text mr-2" href="#">
+                                <!-- <i class="fa fa-info-circle" aria-hidden="true"></i>  -->
+                                O nama</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-left menu-text btn  mr-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <!-- <i class="fa fa-barcode" aria-hidden="true"></i>  -->
+                                Asortiman
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#">Obrada betona</a>
+                                <ul class="dropdown-menu bg-warning">
+                                    <li><a class="dropdown-item" href="#">Vertikalni transport i dodatna oprema</a></li>
+                                    <li><a class="dropdown-item" href="#">Proizvodnja, transport i ugradnja betona</a></li>
+                                    <li><a class="dropdown-item" href="#">Oprema</a></li>
+                                </ul>
+
+                                <a class="dropdown-item" href="#">Obrada betona</a>
+                                <a class="dropdown-item" href="#">Vertikalni transport i dodatna oprema</a>
+                                <a class="dropdown-item" href="#">Proizvodnja, transport i ugradnja betona</a>
+                                <a class="dropdown-item" href="#">Oprema</a>
+                                <a class="dropdown-item" href="#">Oplatni sistemi</a>
+                                <a class="dropdown-item" href="#">Sabijanje tla</a>
+                                <a class="dropdown-item" href="#">Hidraulicni uredjaji i kompresori</a>
+                                <a class="dropdown-item" href="#">Agregati i pumpe</a>
+                                <a class="dropdown-item" href="#">Armiracki program</a>
+                                <a class="dropdown-item" href="#">Uredjaji i alati za secenje</a>
+                                <a class="dropdown-item" href="#">Rucni alat i merni uredjaji</a>
+                                <a class="dropdown-item" href="#">Zastitna oprema</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn text-left menu-text mr-2" href="#">
+                                <!-- <i class="fa fa-credit-card" aria-hidden="true"></i>  -->
+                                Rentiranje i polovna oprema</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn text-left menu-text mr-2" href="#">
+                                <!-- <i class="fa fa-address-book" aria-hidden="true"></i>  -->
+                                Kontakt</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn text-left menu-text mr-5" href="#">
+                                <i class="fa fa-user-cog"></i>
+                                <!-- Administracija -->
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-left menu-text btn" href="#">
+                                En
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- </div> -->
+            </nav>
+        </div>
+    </div>
+
+    <!-- slider -->
+    <div class="w-100 bg-dark" id="slider">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="#">
+                        <img class="d-block w-100" src="./real-images/b1-300.png" alt="First slide">
+                        <div class="carousel-caption text-dark bg-transparent-warning">
+                            <p class="huge-text-1 text-dark">PRODAJA, SERVIS I RENTIRANJE GRAĐEVINSKIH MAŠINA, <br>ALATA I OPREME
+                            </p>
+                            <p class="huge-text-2 text-dark">Iza našeg višegodišnjeg rada stoji preko 500 zadovoljnih klijenata. Budite i vi jedan od njih!
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img class="d-block w-100" src="./real-images/b2-300.png" alt="Second slide">
+                        <div class="carousel-caption bg-transparent-primary">
+                            <!-- d-none d-md-block-->
+                            <p class="huge-text-1 text-white">GRADITE SA NAMA LEPŠU BUDUĆNOST!</p>
+                            <p class="huge-text-2 text-white">... Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, reiciendis.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img class="d-block w-100" src="./real-images/b3-300.png" alt="Third slide">
+                        <div class="carousel-caption  bg-transparent-warning">
+                            <!-- d-none d-md-block-->
+                            <p class="huge-text-1 text-white">POSETITE NAS U NAŠEM IZLOŽBENOM SALONU!</p>
+                            <p class="huge-text-2 text-white">... Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, reiciendis.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img class="d-block w-100" src="./real-images/b4-300.png" alt="Fourth Slide">
+                        <div class="carousel-caption">
+                            <!-- d-none d-md-block-->
+                            <p class="huge-text-1 text-dark">...4...</p>
+                            <p class="huge-text-2 text-dark">... Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, perspiciatis! </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a> -->
+        </div>
+
+    </div>
+
+
+    <!-- about -->
+    <div class="w-100 bg--primary pt-5" id="about">
+        <div class="row text-white">
+            <div class="col-xs-12 col-xl-6">
+                <div class="col-xs-12 col-xl-12">
+                    <h2 class="border-bottom border-white pb-3">Zastupnistvo svetskih proizvodjaca gradjevinskih masina, alata i opreme</h2>
+                    <p class="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis sed, consequuntur magnam asperiores officiis
+                        voluptates amet atque, reiciendis eum vero pariatur soluta sunt, dicta expedita quibusdam sapiente aliquid.
+                        Dolores inventore nisi ad iure sunt, id omnis dolor veritatis doloribus sint consequatur distinctio, magnam hic
+                        ratione vero autem corrupti incidunt assumenda.</p>
+                    <!-- <button class="btn btn-lg btn-outline-light">Detaljnije</button> -->
+                </div>
+                <div class="col-xs-12 col-xl-12">
+                    <h3 class="border-bottom border-white pb-3">Veleprodaja i maloprodaja</h3>
+                    <p class="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis sed, consequuntur magnam asperiores officiis
+                        voluptates amet atque, reiciendis eum vero pariatur soluta sunt, dicta expedita quibusdam sapiente aliquid.
+                        Dolores inventore nisi ad iure sunt, id omnis dolor veritatis doloribus sint consequatur distinctio, magnam hic
+                        ratione vero autem corrupti incidunt assumenda.</p>
+                </div>
+                <div class="col-xs-12 col-xl-12">
+                    <h3 class="border-bottom border-white pb-3">Servis</h3>
+                    <p class="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis sed, consequuntur magnam asperiores officiis
+                        voluptates amet atque, reiciendis eum vero pariatur soluta sunt, dicta expedita quibusdam sapiente aliquid.
+                        Dolores inventore nisi ad iure sunt, id omnis dolor veritatis doloribus sint consequatur distinctio, magnam hic
+                        ratione vero autem corrupti incidunt assumenda.</p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-xl-6">
+                <!-- <h1 class="text-right">O nama</h1> -->
+                <p class="text-center"><img src="./real-images/logo_inverzni-2.png" class="w-75" alt=""></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- content  -->
+    <div class="w-100 py-5" id="content">
+        <div class="row">
+            <div class="d-flex col-12 justify-content-center my-3">
+                <h2 class="text-secondary">Asortiman</h2>
+            </div>
+
+            <!-- 1-1 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img" src="./real-images/1.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Obrada betona</h4>
+                        <!-- <p>
+                                [Mašine za obradu podova, izolacija, obrada betona, vibro letve, laserski navođene vibro letve i oprema, helikopterke, oprema za helikopterke,
+                                posipači praškastog materijala i renomirani brendovi SOMERO ENTERPRISES, BARIKELL , WACKER, ENARCO] - opciono
+                            </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1-2 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img" src="./real-images/2.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Vertikalni transport i dodatna oprema</h4>
+                        <!-- <p>
+                                [Sve vrste manjih gradilišnih dizalica (vrabac), oprema za dizalice, skipovi, platformske dizalice, samomontirajući kranovi, kranovi visoke rotacije,
+                                oprema za kranove sa prepoznatljivim brendovima TEREX COMEDIL, MABER, IORI, BOSCARO]
+                            </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1-3 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img" src="./real-images/3.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Proizvodnja, transport i ugradnja betona</h4>
+                        <!-- <p>
+                                [Mešalice, kamioni sa samoutovarnom betonskom mešalicom, pumpe za beton, oplatni vibratori od proizvođača UNIMEC, D-MIX,
+                                MECBO, SIRTE, ENARCO]
+                            </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1-4 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img" src="./real-images/4.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Oprema</h4>
+                        <!-- <p>
+                                [Montažne lako-čelične platforme, aluminijumske platforme, montažna ramovska skela, oprema za skele, podupirači i nogare, merdevine, kolica od
+                                proizvođača FRIGERIO, VILLALTA, ALTRAD ITALIA]
+                            </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2-1 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img" src="./real-images/5.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Oplatni sistemi</h4>
+                        <!-- <p>
+                                Sistemska oplata, žuta oplata, galanterija za oplatu sa proizvođačima FIGURA, ILPA, FERRONATO
+
+                            </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2-2 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img image" src="./real-images/6.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Sabijanje tla</h4>
+                        <!-- <p>
+                                Vibro žabe, vibro ploče, reverzibilne vibro ploče od proizvođači WACKER, WEBER
+                            </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2-3 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img image" src="./real-images/7.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Hidraulicni uredjaji i kompresori</h4>
+                        <!-- <p>
+                                Hidraulični uređaji, mobilni kompresori i alati od proizvođači DOA, KAESER
+                            </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2-4 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img image" src="./real-images/8.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Agregati i pumpe</h4>
+                        <!-- <p>
+                                Motori, generatori struje, pumpe za vodu, drenažne, muljne pumpe, od proizvođača HONDA, HYUNDAI
+                            </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-1 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img" src="./real-images/9.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Armiracki program</h4>
+                        <!-- <p>
+                                Kombinovane mašine, mašine za savijanje armature, elektro motorne makaze, oprema za savijanje, armirački ručni alati LEADERMEC, TECMOR, KAPRIOL
+
+                            </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-2 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img" src="./real-images/10.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Uredjaji i alati za secenje</h4>
+                        <!-- <p>
+                                Sekačice asfalta i betona, cirkulari za drvo, mašine za rezanje kamena, mašine za bušenje otvora, ručni cirkular za sečenje betona, kermičarski program,
+                                dijamantski alati za sečenje i bušenje različitih vrsta materijala sa brendovima WACKER, MAKER, CARDI, MONTOLIT, SIGMA
+                            </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-3 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img" src="./real-images/11.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Rucni alat i merni uredjaji</h4>
+                        <!-- <p>
+                                Program malih ručnih alata i neophodna oprema, nivelmanska oprema i brendovi KAPRIOL, LEICA, BOSCH
+                            </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-4 -->
+            <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3">
+                <div class="card ">
+                    <!-- <div class="card-header">
+                            <h4 class="card-title transparent-overlay text-secondary text-center">Zastitna oprema</h4>
+                        </div> -->
+                    <div class="img-hover-zoom img-hover-zoom--xyz">
+                        <a href="#">
+                            <img class="card-img" src="./real-images/12.png" alt="Bologna">
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h4 class="card-title transparent-overlay text-secondary text-center">Zastitna oprema</h4>
+                        <!-- <div class="card-body">
+                                <p>
+                                    Zaštita glave, odeća, obuća, zaštita ruku, oprema za rad na visini
+                                </p>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- footer  -->
+    <div class="w-100 text-white bg-primary py-5 footer" id="footer">
+        <div class="row">
+            <div class="col-md-4 p-3">
+                <div class="card bg-transparent">
+                    <div class="card-body">
+                        <h5 class="card-title border-bottom border-white pb-2">Kontakt</h5>
+                        <p class="card-text footer-text">
+                            <!-- <i class="fa fa-map-marker mr-2"></i> -->
+                            <b>Izložbeno-prodajni salon</b><br>
+                            <!-- <span class="pl-4"></span> -->
+                            ul. Grcica Milenka 39, Beograd<br>
+                            <!-- <span class="pl-4">11000 , Srbija</span> -->
+                        </p>
+                        <p class="card-text footer-text">
+                            <!-- <i class="fa fa-clock mr-2"></i> -->
+                            <b>Radno vreme</b><br>
+                            <!-- <span class="pl-4"></span><br> -->
+                            <!-- <span class="pl-4"></span> -->
+                            08:00 - 16:00 Ponedeljak - Petak
+                        </p>
+                        <p class="card-text footer-text">
+                            <b>Kontakt informacije</b><br>
+                            Prodaja:<br>
+                            <!-- <i class="fa fa-phone mr-2"></i> -->
+                            +381 11 38 20 300<br>
+                            <!-- </p>
+                        <p class="card-text footer-text"> -->
+                            <!-- <i class="fa fa-phone mr-2"></i> -->
+                            +381 11 38 20 301<br>
+                            <!-- </p>
+                        <p class="card-text footer-text">
+                            <i class="fa fa-envelope mr-2"></i> -->
+                            prodaja@bepro.rs<br>
+                            office@bepro.rs
+                        </p>
+                        <p class="card-text footer-text">
+                            Servis:<br>
+                            +381 63 297-110<br>
+                            servis@bepro.rs
+                        </p>
+
+                        <p class="card-text footer-text">
+                            <i class="fab fa-facebook mr-3"></i>
+                            <i class="fab fa-instagram"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="card bg-transparent">
+                    <div class="card-body">
+                        <h5 class="card-title border-bottom border-white pb-2">Asortiman</h5>
+                        <ul class="list-unstyled">
+                            <li><a class="text-white footer-link" href=""> Obrada betona</a></li>
+                            <li><a class="text-white footer-link" href="">Vertikalni transport i dodatna oprema</a></li>
+                            <li><a class="text-white footer-link" href="">Proizvodnja, transport i ugradnja betona</a></li>
+
+                            <li><a class="text-white footer-link" href="">Oprema</a></li>
+                            <li><a class="text-white footer-link" href="">Oplatni sistemi</a></li>
+                            <li><a class="text-white footer-link" href="">Sabijanje tla</a></li>
+
+                            <li><a class="text-white footer-link" href="">Hidraulicni uredjaji i kompresori</a></li>
+                            <li><a class="text-white footer-link" href="">Agregati i pumpe</a></li>
+                            <li><a class="text-white footer-link" href="">Armiracki program</a></li>
+
+                            <li><a class="text-white footer-link" href="">Uredjaji i alati za secenje</a></li>
+                            <li><a class="text-white footer-link" href="">Rucni alat i merni uredjaji</a></li>
+                            <li><a class="text-white footer-link" href="">Zastitna oprema</a></li>
+                        </ul>
+                        <h5 class="card-title border-bottom border-white pb-2">
+                            <a class="text-white footer-link" href="">Dobavljaci</a>
+                        </h5>
+                        <h5 class="card-title border-bottom border-white py-2">
+                            <a class="text-white footer-link" href="">Rentiranje i polovna oprema</a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="card bg-transparent">
+                    <div class="card-body">
+                        <h5 class="card-title border-bottom border-white pb-2">Pisite nam</h5>
+                        <form class="mt-3">
+                            <input type="text" class="form-control mb-2" name="name" placeholder="Ime i prezime">
+                            <input type="email" class="form-control mb-2" name="email" placeholder="Email">
+                            <textarea name="message" class="form-control mb-2" id="message" cols="10" rows="5" placeholder="Poruka"></textarea>
+                            <button class="btn btn-primary">Posalji</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- copyright  -->
+    <div class="w-100 copyright bg-darkest-blue text-white text-center">
+        <div class="mx-auto pt-2">
+            &copy; BE PRO BUILD D.O.O. Sva prava zadrzana
+        </div>
+    </div>
+
+
+    <!-- </div> -->
+</body>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    $('.carousel').carousel({
+        interval: 3000
+    })
+</script>
+
+</html>

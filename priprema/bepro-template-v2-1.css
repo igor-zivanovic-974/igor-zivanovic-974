@@ -1,0 +1,64 @@
+.logo {
+  height: 100px;
+}
+
+a,
+i {
+  cursor: pointer;
+}
+
+.bg-image {
+  background-image: url('./building-construction-sunset.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  /* opacity: 0.5; */
+}
+
+.h-90 {
+  height: 90vh;
+}
+
+.row {
+  margin: 0 auto;
+  opacity: 1;
+}
+
+.semitransparent {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-darkest-blue {
+  background-color: rgba(2, 44, 81, 0.8);
+}
+
+.bg-dark-blue {
+  background-color: rgba(5, 75, 137, 0.8);
+}
+
+.bg-light-blue {
+  background-color: rgba(216, 237, 255, 0.8);
+}
+
+@media (max-width: 1199px) {
+  .container-fluid {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+.container-fluid {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.w-70 {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* $primary: purple !important; */
