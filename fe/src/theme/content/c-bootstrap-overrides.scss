@@ -1,0 +1,43 @@
+.container-fluid {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.btn-primary {
+  background-color: $bepro-primary !important;
+}
+
+.btn-outline-primary {
+  color: $bepro-primary !important;
+  //   color: #007bff;
+  //   background-color: transparent;
+  //   background-image: none;
+  border-color: $bepro-primary !important;
+}
+
+.btn-outline-white {
+  color: $white !important;
+  border-color: $white !important;
+
+  &:hover {
+    color: $bepro-primary !important;
+    // border-color: $bepro-light;
+    background-color: $bepro-light-blue !important;
+  }
+}
+
+.bg-darkest-blue {
+  background-color: $bepro-dark-o-blue; // #022C51; // rgba(2, 44, 81, 0.8);
+}
+
+.bg-dark-blue {
+  background-color: rgba(5, 75, 137, 0.8);
+}
+
+.bg-light-blue {
+  background-color: rgba(216, 237, 255, 0.8);
+}
+
+.bg--primary {
+  background-color: $bepro-primary; // #1464b6; /* #6699ff; */
+}

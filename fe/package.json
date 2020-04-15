@@ -2,7 +2,7 @@
   "name": "be-pro",
   "version": "1.0.0",
   "private": true,
-    "scripts": {
+  "scripts": {
     "ng": "ng",
     "build": "npm run env -s && ng build --prod",
     "start": "npm run env -s && ng serve --proxy-config proxy.conf.js",
@@ -19,7 +19,7 @@
     "generate": "ng generate"
   },
   "dependencies": {
-    "@angular/animations": "^8.1.0",
+    "@angular/animations": "^8.2.14",
     "@angular/common": "^8.1.0",
     "@angular/compiler": "^8.1.0",
     "@angular/core": "^8.1.0",
@@ -27,10 +27,14 @@
     "@angular/platform-browser": "^8.1.0",
     "@angular/platform-browser-dynamic": "^8.1.0",
     "@angular/router": "^8.1.0",
-    "@ngx-translate/core": "^11.0.1",
-    "@ng-bootstrap/ng-bootstrap": "^5.0.0-rc.1",
-    "bootstrap": "^4.1.1",
     "@fortawesome/fontawesome-free": "^5.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^5.0.0-rc.1",
+    "@ngx-translate/core": "^11.0.1",
+    "bootstrap": "^4.4.1",
+    "font-awesome": "^4.7.0",
+    "i": "^0.3.6",
+    "ngx-bootstrap": "^5.6.1",
+    "npm": "^6.14.4",
     "rxjs": "^6.5.2",
     "zone.js": "^0.9.1"
   },
