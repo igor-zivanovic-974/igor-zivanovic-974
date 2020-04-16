@@ -19,6 +19,7 @@
         <div class="card-body">
           <h4 class="card-title text-center">
             <i class="far fa-3x fa-user-circle text-muted"></i>
+            <button class="btn btn-success" routerLink="/home">Skip</button>
           </h4>
           <form (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
             <div class="alert alert-danger" [hidden]="!error || isLoading" translate>

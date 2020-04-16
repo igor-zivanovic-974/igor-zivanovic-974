@@ -1,6 +1,6 @@
 <div class="w-100 sticky-top bg-light ">
   <nav class="navbar navbar-expand-xl navbar-light bg-light py-4">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" routerLink="/home">
       <img src="assets/images/bepro-logo.png" class="logo" alt="" />
     </a>
     <button
@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link btn text-left menu-text mr-2" href="#">
+          <a class="nav-link btn text-left menu-text mr-2" routerLink="/about">
             <!-- <i class="fa fa-info-circle" aria-hidden="true"></i>  -->
             O nama</a
           >
@@ -26,7 +26,7 @@
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-left menu-text btn  mr-2"
-            href="#"
+            routerLink="/products"
             id="navbarDropdown"
             role="button"
             data-toggle="dropdown"
@@ -37,47 +37,54 @@
             Asortiman
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#">Obrada betona</a>
+            <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" routerLink="/home">Obrada betona</a>
             <ul class="dropdown-menu bg-warning">
-              <li><a class="dropdown-item" href="#">Vertikalni transport i dodatna oprema</a></li>
-              <li><a class="dropdown-item" href="#">Proizvodnja, transport i ugradnja betona</a></li>
-              <li><a class="dropdown-item" href="#">Oprema</a></li>
+              <li><a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a></li>
+              <li><a class="dropdown-item" routerLink="/home">Proizvodnja, transport i ugradnja betona</a></li>
+              <li><a class="dropdown-item" routerLink="/home">Oprema</a></li>
             </ul>
 
-            <a class="dropdown-item" href="#">Obrada betona</a>
-            <a class="dropdown-item" href="#">Vertikalni transport i dodatna oprema</a>
-            <a class="dropdown-item" href="#">Proizvodnja, transport i ugradnja betona</a>
-            <a class="dropdown-item" href="#">Oprema</a>
-            <a class="dropdown-item" href="#">Oplatni sistemi</a>
-            <a class="dropdown-item" href="#">Sabijanje tla</a>
-            <a class="dropdown-item" href="#">Hidraulicni uredjaji i kompresori</a>
-            <a class="dropdown-item" href="#">Agregati i pumpe</a>
-            <a class="dropdown-item" href="#">Armiracki program</a>
-            <a class="dropdown-item" href="#">Uredjaji i alati za secenje</a>
-            <a class="dropdown-item" href="#">Rucni alat i merni uredjaji</a>
-            <a class="dropdown-item" href="#">Zastitna oprema</a>
+            <a class="dropdown-item" routerLink="/home">Obrada betona</a>
+            <a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a>
+            <a class="dropdown-item" routerLink="/home">Proizvodnja, transport i ugradnja betona</a>
+            <a class="dropdown-item" routerLink="/home">Oprema</a>
+            <a class="dropdown-item" routerLink="/home">Oplatni sistemi</a>
+            <a class="dropdown-item" routerLink="/home">Sabijanje tla</a>
+            <a class="dropdown-item" routerLink="/home">Hidraulicni uredjaji i kompresori</a>
+            <a class="dropdown-item" routerLink="/home">Agregati i pumpe</a>
+            <a class="dropdown-item" routerLink="/home">Armiracki program</a>
+            <a class="dropdown-item" routerLink="/home">Uredjaji i alati za secenje</a>
+            <a class="dropdown-item" routerLink="/home">Rucni alat i merni uredjaji</a>
+            <a class="dropdown-item" routerLink="/home">Zastitna oprema</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn text-left menu-text mr-2" href="#">
+          <a class="nav-link btn text-left menu-text mr-2" routerLink="/suppliers">
+            <!-- <i class="fa fa-credit-card" aria-hidden="true"></i>  -->
+            Dobavljaci</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn text-left menu-text mr-2" routerLink="/renting">
             <!-- <i class="fa fa-credit-card" aria-hidden="true"></i>  -->
             Rentiranje i polovna oprema</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link btn text-left menu-text mr-2" href="#">
+          <a class="nav-link btn text-left menu-text mr-2" routerLink="/contact">
             <!-- <i class="fa fa-address-book" aria-hidden="true"></i>  -->
             Kontakt</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link btn text-left menu-text mr-5" href="#">
+          <a class="nav-link btn text-left menu-text mr-5" routerLink="/login">
             <i class="fa fa-user-cog"></i>
             <!-- Administracija -->
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-left menu-text btn" href="#">
+          <button class="btn btn-small" (click)="logout()" translate>Logout</button>
+          <a class="nav-link text-left menu-text btn" routerLink="/home">
             En
           </a>
         </li>

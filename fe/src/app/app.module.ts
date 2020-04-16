@@ -13,6 +13,12 @@ import { ShellModule } from './shell/shell.module';
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AboutModule } from './about/about.module';
+import { ContactModule } from './contact/contact.module';
+import { ProductsModule } from './products/products.module';
+import { RentingModule } from './renting/renting.module';
+import { SuppliersModule } from './suppliers/suppliers.module';
+import { AdministrationModule } from './administration/administration.module';
 
 @NgModule({
   imports: [
@@ -26,6 +32,12 @@ import { AppRoutingModule } from './app-routing.module';
     SharedModule,
     ShellModule,
     HomeModule,
+    AdministrationModule,
+    AboutModule,
+    ContactModule,
+    ProductsModule,
+    RentingModule,
+    SuppliersModule,
     LoginModule,
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],

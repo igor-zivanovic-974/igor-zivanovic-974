@@ -3,10 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { extract } from '@app/core';
 import { AboutComponent } from './about.component';
+import { Shell } from '@app/shell/shell.service';
 
 const routes: Routes = [
-  // Module is lazy loaded, see app-routing.module.ts
-  { path: '', component: AboutComponent, data: { title: extract('About') } }
+  Shell.childRoutes([{ path: 'about', component: AboutComponent, data: { title: extract('About') } }])
 ];
 
 @NgModule({
