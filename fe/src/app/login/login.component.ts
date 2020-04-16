@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { finalize } from 'rxjs/operators';
 
 import { environment } from '@env/environment';
-import { Logger, I18nService, AuthenticationService, untilDestroyed } from '@app/core';
+import { Logger, I18nService, AuthenticationService } from '@app/core';
 
 const log = new Logger('Login');
 
@@ -13,7 +13,7 @@ const log = new Logger('Login');
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit {
   version: string | null = environment.version;
   error: string | undefined;
   loginForm!: FormGroup;
@@ -31,18 +31,15 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit() {}
 
-  ngOnDestroy() {}
-
   login() {
     this.isLoading = true;
-    const login$ = this.authenticationService.login(this.loginForm.value);
-    login$
+    this.authenticationService
+      .login(this.loginForm.value)
       .pipe(
         finalize(() => {
           this.loginForm.markAsPristine();
           this.isLoading = false;
-        }),
-        untilDestroyed(this)
+        })
       )
       .subscribe(
         credentials => {
@@ -52,7 +49,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         error => {
           log.debug(`Login error: ${error}`);
           this.error = error;
-          this.router.navigate(['/home']);
         }
       );
   }

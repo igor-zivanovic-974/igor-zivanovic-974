@@ -10,6 +10,8 @@ import { AuthenticationService, CredentialsService, I18nService } from '@app/cor
 })
 export class HeaderComponent implements OnInit {
   menuHidden = true;
+  langs: string[];
+  isLoggedIn: boolean;
 
   constructor(
     private router: Router,
@@ -18,7 +20,14 @@ export class HeaderComponent implements OnInit {
     private i18nService: I18nService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.setOtherLangs();
+    this.isLoggedIn = this.username ? true : false;
+  }
+
+  setOtherLangs() {
+    this.langs = this.languages.filter(l => l !== this.currentLanguage);
+  }
 
   toggleMenu() {
     this.menuHidden = !this.menuHidden;
@@ -26,9 +35,11 @@ export class HeaderComponent implements OnInit {
 
   setLanguage(language: string) {
     this.i18nService.language = language;
+    this.setOtherLangs();
   }
 
   logout() {
+    this.isLoggedIn = false;
     this.authenticationService.logout().subscribe(() => this.router.navigate(['/home'], { replaceUrl: true }));
   }
 

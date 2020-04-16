@@ -9,7 +9,7 @@ const routes: Routes = [
     {
       path: 'administration',
       component: AdministrationComponent,
-      canActivate: [AuthenticationGuard],
+      // canActivate: [AuthenticationGuard],
       data: { title: extract('Administration') }
     }
   ])

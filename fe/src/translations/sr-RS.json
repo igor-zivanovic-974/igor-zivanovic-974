@@ -1,0 +1,19 @@
+{
+  "APP_NAME": "be-pro",
+  "Home": "Pocetna",
+  "About": "O nama",
+  "Products": "Asortiman",
+  "Suppliers": "Dobavljaci",
+  "Renting": "Rentiranje i polovna oprema",
+  "Contact": "Kontakt",
+  "Logged in as": "Prijavljen kao",
+  "Login": "Prijava",
+  "Logout": "Odjava",
+  "Password": "Lozinka",
+  "Password is required": "Lozinka je obavezna",
+  "Username": "Korisnicko ime",
+  "Username is required": "Korisnicko ime je obavezno",
+  "Username or password incorrect.": "Korisnicko ime ili Lozinka nisu tacni",
+  "Remember me": "Zapamti me",
+  "Version": "Verzija"
+}

@@ -20,7 +20,7 @@
         <li class="nav-item">
           <a class="nav-link btn text-left menu-text mr-2" routerLink="/about">
             <!-- <i class="fa fa-info-circle" aria-hidden="true"></i>  -->
-            O nama</a
+            {{ 'About' | translate }}</a
           >
         </li>
         <li class="nav-item dropdown">
@@ -34,7 +34,7 @@
             aria-expanded="false"
           >
             <!-- <i class="fa fa-barcode" aria-hidden="true"></i>  -->
-            Asortiman
+            {{ 'Products' | translate }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" routerLink="/home">Obrada betona</a>
@@ -61,32 +61,43 @@
         <li class="nav-item">
           <a class="nav-link btn text-left menu-text mr-2" routerLink="/suppliers">
             <!-- <i class="fa fa-credit-card" aria-hidden="true"></i>  -->
-            Dobavljaci</a
+            {{ 'Suppliers' | translate }}</a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link btn text-left menu-text mr-2" routerLink="/renting">
             <!-- <i class="fa fa-credit-card" aria-hidden="true"></i>  -->
-            Rentiranje i polovna oprema</a
+            {{ 'Renting' | translate }}</a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link btn text-left menu-text mr-2" routerLink="/contact">
             <!-- <i class="fa fa-address-book" aria-hidden="true"></i>  -->
-            Kontakt</a
+            {{ 'Contact' | translate }}</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link btn text-left menu-text mr-5" routerLink="/login">
+          <a class="nav-link btn text-left mr-5" *ngIf="!isLoggedIn" routerLink="/login">
+            <i class="fa fa-user-cog"></i>
+            <!-- Administracija -->
+          </a>
+          <a class="nav-link btn text-left mr-5" *ngIf="isLoggedIn" routerLink="/administration">
             <i class="fa fa-user-cog"></i>
             <!-- Administracija -->
           </a>
         </li>
         <li class="nav-item">
-          <button class="btn btn-small" (click)="logout()" translate>Logout</button>
-          <a class="nav-link text-left menu-text btn" routerLink="/home">
-            En
-          </a>
+          <button
+            class="btn btn-link btn-small menu-text text-secondary"
+            *ngIf="isLoggedIn"
+            (click)="logout()"
+            title="{{ 'Logout' | translate }}"
+          >
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
+          <button class="btn" *ngFor="let language of langs" (click)="setLanguage(language)">
+            {{ language }}
+          </button>
         </li>
       </ul>
     </div>

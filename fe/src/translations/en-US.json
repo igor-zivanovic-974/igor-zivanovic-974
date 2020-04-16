@@ -1,8 +1,11 @@
 {
   "APP_NAME": "be-pro",
-  "About": "About",
-  "Hello world !": "Hello world !",
   "Home": "Home",
+  "About": "About Us",
+  "Products": "Products",
+  "Suppliers": "Suppliers",
+  "Renting": "Renting",
+  "Contact": "Contact",
   "Logged in as": "Logged in as",
   "Login": "Login",
   "Logout": "Logout",
