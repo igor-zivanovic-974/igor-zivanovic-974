@@ -1,0 +1,60 @@
+// .product-hover-img:hover {
+//   display: block;
+//   position: absolute;
+//   left: 150px;
+//   padding: 5px;
+//   border: solid 1px #ccc;
+//   border-radius: 5px;
+// }
+
+// .product-hover-img {
+//   display: none;
+// }
+
+.image {
+  width: 250px;
+  height: 250px;
+}
+
+a > div {
+  display: none;
+}
+a:hover > div {
+  height: 250px;
+  display: block;
+  position: absolute;
+  left: 150px;
+  padding: 5px;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 1);
+}
+
+ul {
+  position: relative;
+  list-style: none;
+}
+
+li {
+  margin-left: -20px;
+}
+
+li::before {
+  position: absolute;
+  left: 0;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  content: "\f105";
+}
+
+.no-decoration {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: 500 !important;
+}

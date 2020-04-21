@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SuppliersService } from './suppliers.service';
+import { Supplier } from '@app/core/interfaces/supplier';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-suppliers',
@@ -6,7 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./suppliers.component.scss']
 })
 export class SuppliersComponent implements OnInit {
-  constructor() {}
+  suppliers: Supplier[] = [];
 
-  ngOnInit() {}
+  constructor(private service: SuppliersService, private translate: TranslateService) {}
+
+  ngOnInit() {
+    this.getSuppliers();
+  }
+
+  getSuppliers() {
+    this.service.getSuppliers().subscribe((suppliers: Supplier[]) => {
+      this.suppliers = suppliers;
+    });
+  }
 }

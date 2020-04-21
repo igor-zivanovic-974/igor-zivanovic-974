@@ -1,17 +1,67 @@
-<div class="w-100 sticky-top bg-light ">
+<!-- <style>
+  .move {
+    width: 12.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    .move {
+      margin-left: 150px;
+      margin-top: -10px;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .move {
+      width: 100%;
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
+  }
+
+  .dropdown-menu .dropdown-toggle::after {
+    vertical-align: middle;
+    border-left: 4px solid;
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+  }
+
+  .dropdown-menu .dropdown .dropdown-menu {
+    left: 100%;
+    top: 0%;
+    margin: 0 20px;
+    border-width: 0;
+  }
+
+  .dropdown-menu .dropdown .dropdown-menu.left {
+    right: 100%;
+    left: auto;
+  }
+
+  .dropdown-menu > li a:hover,
+  .dropdown-menu > li.show {
+    background: #007bff;
+    color: white;
+  }
+
+  .dropdown-menu > li.show > a {
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .dropdown-menu .dropdown .dropdown-menu {
+      margin: 0;
+      border-width: 1px;
+    }
+  }
+</style> -->
+<div class="w-100 sticky-top bg-light border-bottom">
   <nav class="navbar navbar-expand-xl navbar-light bg-light py-4">
     <a class="navbar-brand" routerLink="/home">
       <img src="assets/images/bepro-logo.png" class="logo" alt="" />
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -20,30 +70,14 @@
         <li class="nav-item">
           <a class="nav-link btn text-left menu-text mr-2" routerLink="/about">
             <!-- <i class="fa fa-info-circle" aria-hidden="true"></i>  -->
-            {{ 'About' | translate }}</a
-          >
+            {{ 'About' | translate }}</a>
         </li>
         <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle text-left menu-text btn  mr-2"
-            routerLink="/products"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
+          <a class="nav-link dropdown-toggle text-left menu-text btn  mr-2" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <!-- <i class="fa fa-barcode" aria-hidden="true"></i>  -->
             {{ 'Products' | translate }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" routerLink="/home">Obrada betona</a>
-            <ul class="dropdown-menu bg-warning">
-              <li><a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a></li>
-              <li><a class="dropdown-item" routerLink="/home">Proizvodnja, transport i ugradnja betona</a></li>
-              <li><a class="dropdown-item" routerLink="/home">Oprema</a></li>
-            </ul>
-
             <a class="dropdown-item" routerLink="/home">Obrada betona</a>
             <a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a>
             <a class="dropdown-item" routerLink="/home">Proizvodnja, transport i ugradnja betona</a>
@@ -57,24 +91,53 @@
             <a class="dropdown-item" routerLink="/home">Rucni alat i merni uredjaji</a>
             <a class="dropdown-item" routerLink="/home">Zastitna oprema</a>
           </div>
+          <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item dropdown-toggle" data-toggle="dropdown">Obrada betona</a>
+            <ul class="dropdown-menu bg-warning move">
+              <li><a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a></li>
+              <li><a class="dropdown-item" routerLink="/home">Proizvodnja, transport i ugradnja betona</a></li>
+              <li><a class="dropdown-item" routerLink="/home">Oprema</a></li>
+              <li><a class="dropdown-item dropdown-toggle bg-info" data-toggle="dropdown">DROPDOWN</a>
+                <ul class="dropdown-menu bg-warning move">
+                  <li><a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a></li>
+                  <li><a class="dropdown-item" routerLink="/home">Proizvodnja, transport i ugradnja betona</a></li>
+                  <li><a class="dropdown-item" routerLink="/home">Oprema</a></li>
+                  <li><a class="dropdown-item dropdown-toggle" data-toggle="dropdown">DROPDOWN</a>
+                    <ul class="dropdown-menu bg-warning move">
+                      <li><a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a></li>
+                      <li><a class="dropdown-item" routerLink="/home">Proizvodnja, transport i ugradnja betona</a></li>
+                      <li><a class="dropdown-item" routerLink="/home">Oprema</a></li>
+                      <li><a class="dropdown-item dropdown-toggle" data-toggle="dropdown">DROPDOWN</a>
+                        <ul class="dropdown-menu bg-warning move">
+                          <li><a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a></li>
+                          <li><a class="dropdown-item" routerLink="/home">Proizvodnja, transport i ugradnja betona</a></li>
+                          <li><a class="dropdown-item" routerLink="/home">Oprema</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>-->
+
+
+          <!-- </div> -->
         </li>
+
         <li class="nav-item">
           <a class="nav-link btn text-left menu-text mr-2" routerLink="/suppliers">
             <!-- <i class="fa fa-credit-card" aria-hidden="true"></i>  -->
-            {{ 'Suppliers' | translate }}</a
-          >
+            {{ 'Suppliers' | translate }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link btn text-left menu-text mr-2" routerLink="/renting">
             <!-- <i class="fa fa-credit-card" aria-hidden="true"></i>  -->
-            {{ 'Renting' | translate }}</a
-          >
+            {{ 'Renting' | translate }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link btn text-left menu-text mr-2" routerLink="/contact">
             <!-- <i class="fa fa-address-book" aria-hidden="true"></i>  -->
-            {{ 'Contact' | translate }}</a
-          >
+            {{ 'Contact' | translate }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link btn text-left mr-5" *ngIf="!isLoggedIn" routerLink="/login">
@@ -87,12 +150,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <button
-            class="btn btn-link btn-small menu-text text-secondary"
-            *ngIf="isLoggedIn"
-            (click)="logout()"
-            title="{{ 'Logout' | translate }}"
-          >
+          <button class="btn btn-link btn-small menu-text text-secondary" *ngIf="isLoggedIn" (click)="logout()" title="{{ 'Logout' | translate }}">
             <i class="fas fa-sign-out-alt"></i>
           </button>
           <button class="btn" *ngFor="let language of langs" (click)="setLanguage(language)">
@@ -103,6 +161,79 @@
     </div>
   </nav>
 </div>
+
+<!-- <script src="assets/js/bootnavbar.js"></script> -->
+<!-- <script>
+  (function($) {
+    var defaults = {
+      sm: 540,
+      md: 720,
+      lg: 960,
+      xl: 1140,
+      navbar_expand: 'lg',
+      animation: true,
+      animateIn: 'fadeIn'
+    };
+    $.fn.bootnavbar = function(options) {
+      var screen_width = $(document).width();
+      settings = $.extend(defaults, options);
+
+      if (screen_width >= settings.lg) {
+        $(this)
+          .find('.dropdown')
+          .hover(
+            function() {
+              $(this).addClass('show');
+              $(this)
+                .find('.dropdown-menu')
+                .first()
+                .addClass('show');
+              if (settings.animation) {
+                $(this)
+                  .find('.dropdown-menu')
+                  .first()
+                  .addClass('animated ' + settings.animateIn);
+              }
+            },
+            function() {
+              $(this).removeClass('show');
+              $(this)
+                .find('.dropdown-menu')
+                .first()
+                .removeClass('show');
+            }
+          );
+      }
+
+      $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+        if (
+          !$(this)
+            .next()
+            .hasClass('show')
+        ) {
+          $(this)
+            .parents('.dropdown-menu')
+            .first()
+            .find('.show')
+            .removeClass('show');
+        }
+        var $subMenu = $(this).next('.dropdown-menu');
+        $subMenu.toggleClass('show');
+
+        $(this)
+          .parents('li.nav-item.dropdown.show')
+          .on('hidden.bs.dropdown', function(e) {
+            $('.dropdown-submenu .show').removeClass('show');
+          });
+
+        return false;
+      });
+    };
+  })(jQuery);
+</script>
+<script>
+  $('#navbar').bootnavbar();
+</script> -->
 
 <!-- <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

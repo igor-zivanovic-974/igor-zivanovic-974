@@ -1,12 +1,17 @@
 <?php
 
 // required headers
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+// header("Access-Control-Allow-Origin: *");
+// header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Origin: http://localhost:4200");
+header("Vary: Origin, Access-Control-Request-Headers");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE");
+header("Access-Control-Allow-Headers: cache-control,expires,pragma");
 
 // include database and object files
 include_once "../../config/db.php";
-include_once "../../objects/product.php";
+include_once "../../models/product.php";
 
 
 // instantiate database and product object
@@ -25,7 +30,7 @@ if ($num > 0) {
 
     // products array
     $products_arr = array();
-    $products_arr["records"] = array();
+    $products_arr["items"] = array();
 
     // retrieve our table contents
     // fetch() is faster than fetchAll()
@@ -45,7 +50,7 @@ if ($num > 0) {
             "category_name" => $category_name
         );
 
-        array_push($products_arr["records"], $product_item);
+        array_push($products_arr["items"], $product_item);
     }
 
     // set response code - 200 OK

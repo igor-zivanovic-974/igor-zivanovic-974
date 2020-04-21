@@ -1,14 +1,19 @@
 <?php
 // required headers
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: access");
-header("Access-Control-Allow-Methods: GET");
+// header("Access-Control-Allow-Origin: '*'");
+// header("Access-Control-Allow-Headers: access");
+// header("Access-Control-Allow-Methods: GET");
+// header("Access-Control-Allow-Credentials: true");
+// header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: http://localhost:4200");
+header("Vary: Origin, Access-Control-Request-Headers");
 header("Access-Control-Allow-Credentials: true");
-header('Content-Type: application/json');
+header("Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE");
+header("Access-Control-Allow-Headers: cache-control,expires,pragma");
 
 // include database and object files
 include_once '../../config/db.php';
-include_once '../../objects/product.php';
+include_once '../../models/product.php';
 
 // get database connection
 $database = new DatabaseConnection();

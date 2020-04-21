@@ -10,7 +10,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once '../../config/db.php';
 
 // instantiate product object
-include_once '../../objects/product.php';
+include_once '../../models/product.php';
 
 $database = new DatabaseConnection();
 $db = $database->getConnection();
