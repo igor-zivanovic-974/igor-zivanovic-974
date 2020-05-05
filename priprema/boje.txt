@@ -8,3 +8,7 @@ narandzasta #ffc107 / rgb(255, 193, 7)
 
 
 logo boja #CDDAEB
+
+siva            #6d6e70 / rgb(109, 110, 112)
+svetlo plava    #037ac2 / rgb(3, 122, 194)
+tamno plava     #26409c / rgb(38, 64, 156)

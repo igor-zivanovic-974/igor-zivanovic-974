@@ -11,26 +11,26 @@ header("Access-Control-Allow-Headers: cache-control,expires,pragma");
 
 // include database and object files
 include_once "../../config/db.php";
-include_once "../../models/product.php";
+include_once "../../models/category.php";
 
 
-// instantiate database and product object
+// instantiate database and category object
 $database = new DatabaseConnection();
 $db = $database->getConnection();
 
 // initialize object
-$product = new Product($db);
+$category = new category($db);
 
-// query products
-$stmt = $product->read();
+// query categories
+$stmt = $category->read();
 $num = $stmt->rowCount();
 
 // check if more than 0 record found
 if ($num > 0) {
 
-    // products array
-    $products_arr = array();
-    $products_arr["items"] = array();
+    // categories array
+    $categories_arr = array();
+    $categories_arr["items"] = array();
 
     // retrieve our table contents
     // fetch() is faster than fetchAll()
@@ -41,39 +41,26 @@ if ($num > 0) {
         // just $name only
         extract($row);
 
-        $product_item = array(
+        $category_item = array(
             "id" => $id,
-            "name" => $name,
-            "alias" => $alias,
-            "description" => html_entity_decode($description),
-            "groupId" => $groupId,
-            "groupName" => $groupName,
-            "categoryId" => $categoryId,
-            "categoryName" => $categoryName,
-            "subcategoryId" => $categoryId,
-            "subcategoryName" => $categoryName,
-            "price" => $price,
-            "barcode" => $barcode,
-            "dimension" => $dimension,
-            "weight" => $weight,
-            "active" => $active
+            "name" => $name
         );
 
-        array_push($products_arr["items"], $product_item);
+        array_push($categories_arr["items"], $category_item);
     }
 
     // set response code - 200 OK
     http_response_code(200);
 
-    // show products data in json format
-    echo json_encode($products_arr);
+    // show categories data in json format
+    echo json_encode($categories_arr);
 } else {
 
     // set response code - 404 Not found
     http_response_code(404);
 
-    // tell the user no products found
+    // tell the user no categories found
     echo json_encode(
-        array("message" => "No products found.")
+        array("message" => "No categories found.")
     );
 }

@@ -23,17 +23,31 @@ $data = json_decode(file_get_contents("php://input"));
 // make sure data is not empty
 if (
     !empty($data->name) &&
-    !empty($data->price) &&
+    !empty($data->alias) &&
     !empty($data->description) &&
-    !empty($data->category_id)
+    !empty($data->groupId) &&
+    !empty($data->categoryId) &&
+    !empty($data->subcategoryId) &&
+    !empty($data->price) &&
+    !empty($data->barcode) &&
+    !empty($data->dimension) &&
+    !empty($data->weight) &&
+    !empty($data->active)
+
 ) {
 
     // set product property values
     $product->name = $data->name;
-    $product->price = $data->price;
+    $product->alias = $data->alias;
     $product->description = $data->description;
-    $product->category_id = $data->category_id;
-    $product->created = date('Y-m-d H:i:s');
+    $product->groupId = $data->groupId;
+    $product->categoryId = $data->categoryId;
+    $product->subcategoryId = $data->subcategoryId;
+    $product->price = $data->price;
+    $product->barcode = $data->barcode;
+    $product->dimension = $data->dimension;
+    $product->weight = $data->weight;
+    $product->active = $data->active;
 
     // create the product
     if ($product->create()) {

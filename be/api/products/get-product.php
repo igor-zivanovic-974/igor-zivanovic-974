@@ -28,20 +28,30 @@ $product->id = isset($_GET['id']) ? $_GET['id'] : die();
 // read the details of product to be edited
 $product->readOne();
 
-if ($product->name != null) {
+if ($product->id != null) {
     // create array
     $product_arr = array(
-        "id" =>  $product->id,
+        "id" => $product->id,
         "name" => $product->name,
-        "description" => $product->description,
+        "alias" => $product->alias,
+        "description" => html_entity_decode($product->description),
+        "groupId" => $product->groupId,
+        "groupName" => $product->groupName,
+        "categoryId" => $product->categoryId,
+        "categoryName" => $product->categoryName,
+        "subcategoryId" => $product->subcategoryId,
+        "subcategoryName" => $product->subcategoryName,
         "price" => $product->price,
-        "category_id" => $product->category_id,
-        "category_name" => $product->category_name
+        "barcode" => $product->barcode,
+        "dimension" => $product->dimension,
+        "weight" => $product->weight,
+        "active" => $product->active,
 
     );
 
     // set response code - 200 OK
     http_response_code(200);
+
 
     // make it json format
     echo json_encode($product_arr);

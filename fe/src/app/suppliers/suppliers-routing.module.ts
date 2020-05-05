@@ -5,7 +5,7 @@ import { SuppliersComponent } from './suppliers.component';
 import { extract } from '@app/core';
 
 const routes: Routes = [
-  Shell.childRoutes([{ path: 'suppliers', component: SuppliersComponent, data: { title: extract('Suppliers') } }])
+  Shell.childRoutes([{ path: 'brands', component: SuppliersComponent, data: { title: extract('Brands') } }])
 ];
 
 @NgModule({

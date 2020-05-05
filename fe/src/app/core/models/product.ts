@@ -1,11 +1,17 @@
 export class Product {
   id: number;
   name: string;
+  alias: string;
   description: string;
-  price: number;
+  groupId: number;
+  groupName: string;
   categoryId: number;
   categoryName: string;
-  // subCategoryId: number;
-  // subCategoryName: string;
-  created: Date;
+  subcategoryId: number;
+  subcategoryName: string;
+  price: number;
+  barcode: string;
+  dimension: string;
+  weight: string;
+  active: boolean;
 }

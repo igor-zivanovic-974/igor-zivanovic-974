@@ -21,8 +21,11 @@ $db = $database->getConnection();
 // initialize object
 $product = new Product($db);
 
+// set ID property of record to read
+$product->q = isset($_GET['q']) ? $_GET['q'] : die();
+
 // query products
-$stmt = $product->read();
+$stmt = $product->search();
 $num = $stmt->rowCount();
 
 // check if more than 0 record found
@@ -33,12 +36,8 @@ if ($num > 0) {
     $products_arr["items"] = array();
 
     // retrieve our table contents
-    // fetch() is faster than fetchAll()
-    // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         // extract row
-        // this will make $row['name'] to
-        // just $name only
         extract($row);
 
         $product_item = array(

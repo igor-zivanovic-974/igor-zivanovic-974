@@ -56,42 +56,48 @@
     }
   }
 </style> -->
-<div class="w-100 sticky-top bg-light border-bottom">
-  <nav class="navbar navbar-expand-xl navbar-light bg-light py-4">
-    <a class="navbar-brand" routerLink="/home">
-      <img src="assets/images/bepro-logo.png" class="logo" alt="" />
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="w-100">
+  <div class="w-75 mx-auto sticky-top bg-light border-bottom">
+    <nav class="navbar navbar-expand-xl navbar-light bg-light py-2">
+      <a class="navbar-brand" routerLink="/home">
+        <img src="assets/images/bepro-logo.png" class="logo" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link btn text-left menu-text mr-2" routerLink="/about">
-            <!-- <i class="fa fa-info-circle" aria-hidden="true"></i>  -->
-            {{ 'About' | translate }}</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-left menu-text btn  mr-2" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <!-- <i class="fa fa-barcode" aria-hidden="true"></i>  -->
-            {{ 'Products' | translate }}
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="/home">Obrada betona</a>
-            <a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a>
-            <a class="dropdown-item" routerLink="/home">Proizvodnja, transport i ugradnja betona</a>
-            <a class="dropdown-item" routerLink="/home">Oprema</a>
-            <a class="dropdown-item" routerLink="/home">Oplatni sistemi</a>
-            <a class="dropdown-item" routerLink="/home">Sabijanje tla</a>
-            <a class="dropdown-item" routerLink="/home">Hidraulicni uredjaji i kompresori</a>
-            <a class="dropdown-item" routerLink="/home">Agregati i pumpe</a>
-            <a class="dropdown-item" routerLink="/home">Armiracki program</a>
-            <a class="dropdown-item" routerLink="/home">Uredjaji i alati za secenje</a>
-            <a class="dropdown-item" routerLink="/home">Rucni alat i merni uredjaji</a>
-            <a class="dropdown-item" routerLink="/home">Zastitna oprema</a>
-          </div>
-          <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link btn text-left menu-text mr-2" routerLink="/home">
+              <!-- <i class="fa fa-info-circle" aria-hidden="true"></i>  -->
+              {{ 'Home' | translate }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn text-left menu-text mr-2" routerLink="/about">
+              <!-- <i class="fa fa-info-circle" aria-hidden="true"></i>  -->
+              {{ 'About' | translate }}</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-left menu-text btn  mr-2" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <!-- <i class="fa fa-barcode" aria-hidden="true"></i>  -->
+              {{ 'Products' | translate }}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/home">Obrada betona</a>
+              <a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a>
+              <a class="dropdown-item" routerLink="/home">Proizvodnja, transport i ugradnja betona</a>
+              <a class="dropdown-item" routerLink="/home">Oprema</a>
+              <a class="dropdown-item" routerLink="/home">Oplatni sistemi</a>
+              <a class="dropdown-item" routerLink="/home">Sabijanje tla</a>
+              <a class="dropdown-item" routerLink="/home">Hidraulicni uredjaji i kompresori</a>
+              <a class="dropdown-item" routerLink="/home">Agregati i pumpe</a>
+              <a class="dropdown-item" routerLink="/home">Armiracki program</a>
+              <a class="dropdown-item" routerLink="/home">Uredjaji i alati za secenje</a>
+              <a class="dropdown-item" routerLink="/home">Rucni alat i merni uredjaji</a>
+              <a class="dropdown-item" routerLink="/home">Zastitna oprema</a>
+            </div>
+            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item dropdown-toggle" data-toggle="dropdown">Obrada betona</a>
             <ul class="dropdown-menu bg-warning move">
               <li><a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a></li>
@@ -121,45 +127,46 @@
             </ul>-->
 
 
-          <!-- </div> -->
-        </li>
+            <!-- </div> -->
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link btn text-left menu-text mr-2" routerLink="/suppliers">
-            <!-- <i class="fa fa-credit-card" aria-hidden="true"></i>  -->
-            {{ 'Suppliers' | translate }}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn text-left menu-text mr-2" routerLink="/renting">
-            <!-- <i class="fa fa-credit-card" aria-hidden="true"></i>  -->
-            {{ 'Renting' | translate }}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn text-left menu-text mr-2" routerLink="/contact">
-            <!-- <i class="fa fa-address-book" aria-hidden="true"></i>  -->
-            {{ 'Contact' | translate }}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn text-left mr-5" *ngIf="!isLoggedIn" routerLink="/login">
-            <i class="fa fa-user-cog"></i>
-            <!-- Administracija -->
-          </a>
-          <a class="nav-link btn text-left mr-5" *ngIf="isLoggedIn" routerLink="/administration">
-            <i class="fa fa-user-cog"></i>
-            <!-- Administracija -->
-          </a>
-        </li>
-        <li class="nav-item">
-          <button class="btn btn-link btn-small menu-text text-secondary" *ngIf="isLoggedIn" (click)="logout()" title="{{ 'Logout' | translate }}">
-            <i class="fas fa-sign-out-alt"></i>
-          </button>
-          <button class="btn" *ngFor="let language of langs" (click)="setLanguage(language)">
-            {{ language }}
-          </button>
-        </li>
-      </ul>
-    </div>
-  </nav>
+          <li class="nav-item">
+            <a class="nav-link btn text-left menu-text mr-2" routerLink="/brands">
+              <!-- <i class="fa fa-credit-card" aria-hidden="true"></i>  -->
+              {{ 'Brands' | translate }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn text-left menu-text mr-2" routerLink="/renting">
+              <!-- <i class="fa fa-credit-card" aria-hidden="true"></i>  -->
+              {{ 'Renting' | translate }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn text-left menu-text mr-2" routerLink="/contact">
+              <!-- <i class="fa fa-address-book" aria-hidden="true"></i>  -->
+              {{ 'Contact' | translate }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn text-left mr-5" *ngIf="!isLoggedIn" routerLink="/login">
+              <i class="fa fa-user-cog"></i>
+              <!-- Administracija -->
+            </a>
+            <a class="nav-link btn text-left mr-5" *ngIf="isLoggedIn" routerLink="/administration">
+              <i class="fa fa-user-cog"></i>
+              <!-- Administracija -->
+            </a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-link btn-small menu-text text-secondary" *ngIf="isLoggedIn" (click)="logout()" title="{{ 'Logout' | translate }}">
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
+            <button class="btn" *ngFor="let language of langs" (click)="setLanguage(language)">
+              {{ language }}
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </div>
 
 <!-- <script src="assets/js/bootnavbar.js"></script> -->

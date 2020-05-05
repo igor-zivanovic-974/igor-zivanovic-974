@@ -25,9 +25,16 @@ $product->id = $data->id;
 
 // set product property values
 $product->name = $data->name;
-$product->price = $data->price;
+$product->alias = $data->alias;
 $product->description = $data->description;
-$product->category_id = $data->category_id;
+$product->groupId = $data->groupId;
+$product->categoryId = $data->categoryId;
+$product->subcategoryId = $data->subcategoryId;
+$product->price = $data->price;
+$product->barcode = $data->barcode;
+$product->dimension = $data->dimension;
+$product->weight = $data->weight;
+$product->active = $data->active;
 
 // update the product
 if ($product->update()) {

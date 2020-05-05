@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .arrow-up {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+
+            border-bottom: 5px solid black;
+        }
+
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+
+            border-top: 20px solid #f00;
+        }
+
+        .arrow-right {
+            width: 0;
+            height: 0;
+            border-top: 60px solid transparent;
+            border-bottom: 60px solid transparent;
+
+            border-left: 60px solid green;
+        }
+
+        .arrow-left {
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+
+            border-right: 10px solid blue;
+        }
+
+        .trapez {
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+
+            border-top: 100px solid blue;
+            border-right: 30px solid blue;
+            border-bottom: 150px solid blue;
+            /* border-right: 10px solid blue; */
+        }
+
+
+        #triangle-topleft {
+            width: 0;
+            height: 0;
+            border-top: 100px solid red;
+            border-right: 100px solid transparent;
+        }
+
+        #triangle-bottomright {
+            width: 0;
+            height: 0;
+            border-bottom: 100px solid red;
+            border-left: 100px solid transparent;
+        }
+
+
+        #trapezoid-1 {
+            border-bottom: 40px solid orange;
+            border-left: 40px solid transparent;
+            border-right: 0px solid transparent;
+            height: 0;
+            width: 60%;
+            /* 450px; 30rem;*/
+        }
+
+        #trapezoid-2 {
+            border-bottom: 40px solid orange;
+            border-left: 0px solid transparent;
+            border-right: 40px solid transparent;
+            height: 0;
+            width: 30%;
+            /* 250px; 15rem; */
+        }
+
+
+        #parallelogram {
+            width: 150px;
+            height: 100px;
+            transform: skew(20deg);
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="arrow-up"></div>
+    <div class="arrow-down"></div>
+    <div class="arrow-left"></div>
+    <div class="arrow-right"></div>
+    <div class="trapez"></div>
+    <div id="trapezoid-1"></div><br>
+    <div id="trapezoid-2"></div>
+</body>
+
+</html>
