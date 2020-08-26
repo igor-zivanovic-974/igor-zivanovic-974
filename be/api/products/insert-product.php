@@ -32,6 +32,7 @@ if (
     !empty($data->barcode) &&
     !empty($data->dimension) &&
     !empty($data->weight) &&
+    !empty($data->weiimageght) &&
     !empty($data->active)
 
 ) {
@@ -47,6 +48,7 @@ if (
     $product->barcode = $data->barcode;
     $product->dimension = $data->dimension;
     $product->weight = $data->weight;
+    $product->image = $data->image;
     $product->active = $data->active;
 
     // create the product

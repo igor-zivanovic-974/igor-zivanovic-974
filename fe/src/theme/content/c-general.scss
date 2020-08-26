@@ -12,3 +12,25 @@ a {
 // gradients & shadows
 // $enable-gradients: true;
 // $enable-shadows: true;
+
+@media (max-width: 576px) {
+  .content-container {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .content-container {
+    width: 80% !important;
+    // margin: 0 auto;
+    padding: 0;
+  }
+}
+
+.info-line {
+  height: 40px;
+}
+
+p {
+  color: $bepro-primary;
+}

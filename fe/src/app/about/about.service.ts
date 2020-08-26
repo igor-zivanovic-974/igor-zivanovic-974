@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { Product } from '@app/core/models/product';
+import { Product } from '@app/core/interfaces/product';
 import { environment } from '@env/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { NotificationsService } from '@app/core/notifications.service';
+import { Breadcrumb } from '@app/core/interfaces/breadcrumb';
 
 const routes = {
   getProduct: (id: any) => `/products/get-product.php?id=${id}`,
@@ -32,11 +33,16 @@ export class AboutService {
     })
   };
 
+  breadcrumbs: Breadcrumb[] = [
+    { name: 'Home', link: 'home', displayArrow: true },
+    { name: 'About', link: 'about', displayArrow: false }
+  ];
+
   constructor(
     private httpClient: HttpClient,
     private translate: TranslateService,
     private notifier: NotificationsService
-  ) {}
+  ) { }
 
   getProducts(): Observable<Product[]> {
     return this.httpClient.get(routes.getProducts()).pipe(

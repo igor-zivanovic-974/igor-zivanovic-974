@@ -1,15 +1,26 @@
-<div class="container-fluid">
-  <div class="jumbotron text-center">
-    <h1>
-      <span translate>APP_NAME</span>
-    </h1>
-    <p><i class="far fa-bookmark"></i> <span translate>Version</span> {{ version }}</p>
-  </div>
-  <div class="" *ngFor="let p of products">
-    <span class="mr-2">{{ p.id }}</span>
-    <span class="mr-2">{{ p.name }}</span>
-    <span class="mr-2">{{ p.category_name }}</span>
-    <span class="mr-2">{{ p.description }}</span>
-    <span class="mr-2">{{ p.price }}</span>
-  </div>
+<div class="content-container mx-auto text-primary">
+    <p class="text-secondary mt-2">
+        <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+    </p>
+    <div class="row">
+        <div class="col-12 col-xl-6">
+
+            <h1 class="mx-3">{{'About' | translate}}</h1>
+            <p class="text-center"><img src="assets/images/lideri.png" class="w-100" alt="" /></p>
+        </div>
+        <div class="col-12 col-xl-6">
+            <div class="col-xs-12 col-xl-12 mt-3">
+                <h3 class="">{{'home.representation' | translate}}</h3>
+                <p class="mt-1 text-secondary">{{'home.representation-text' | translate}}</p>
+            </div>
+            <div class="col-12 col-xl-12 mt-3">
+                <h3 class="">{{'home.wholesale-retail' | translate}}</h3>
+                <p class="mt-1 text-secondary">{{'home.wholesale-retail-text' | translate}}</p>
+            </div>
+            <div class="col-12 col-xl-12 mt-3">
+                <h3 class="">{{'home.service' | translate}}</h3>
+                <p class="mt-1 text-secondary">{{'home.service-text' | translate}}</p>
+            </div>
+        </div>
+    </div>
 </div>

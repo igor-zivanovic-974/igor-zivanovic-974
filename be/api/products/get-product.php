@@ -31,22 +31,22 @@ $product->readOne();
 if ($product->id != null) {
     // create array
     $product_arr = array(
-        "id" => $product->id,
+        "id" => intval($product->id),
         "name" => $product->name,
         "alias" => $product->alias,
         "description" => html_entity_decode($product->description),
-        "groupId" => $product->groupId,
+        "groupId" => intval($product->groupId),
         "groupName" => $product->groupName,
-        "categoryId" => $product->categoryId,
+        "categoryId" => intval($product->categoryId),
         "categoryName" => $product->categoryName,
-        "subcategoryId" => $product->subcategoryId,
+        "subcategoryId" => intval($product->subcategoryId),
         "subcategoryName" => $product->subcategoryName,
         "price" => $product->price,
         "barcode" => $product->barcode,
         "dimension" => $product->dimension,
         "weight" => $product->weight,
+        "image" => $product->image,
         "active" => $product->active,
-
     );
 
     // set response code - 200 OK

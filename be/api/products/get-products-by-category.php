@@ -43,20 +43,21 @@ if ($num > 0) {
         extract($row);
 
         $product_item = array(
-            "id" => $id,
+            "id" => intval($id),
             "name" => $name,
             "alias" => $alias,
             "description" => html_entity_decode($description),
-            "groupId" => $groupId,
+            "groupId" => intval($groupId),
             "groupName" => $groupName,
-            "categoryId" => $categoryId,
+            "categoryId" => intval($categoryId),
             "categoryName" => $categoryName,
-            "subcategoryId" => $categoryId,
-            "subcategoryName" => $categoryName,
+            "subcategoryId" => intval($subcategoryId),
+            "subcategoryName" => $subcategoryName,
             "price" => $price,
             "barcode" => $barcode,
             "dimension" => $dimension,
             "weight" => $weight,
+            "image" => $image,
             "active" => $active
         );
 

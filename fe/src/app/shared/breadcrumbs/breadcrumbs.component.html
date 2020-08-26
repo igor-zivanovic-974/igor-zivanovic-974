@@ -1,0 +1,4 @@
+<span class="text-secondary" *ngFor="let b of breadcrumbs">
+    <a routerLink="b.link" class="mr-2" (click)="goTo(b.link)">{{b.name | translate}} </a>
+    <i class="fas fa-angle-right mr-2" *ngIf="b.displayArrow"></i>
+</span>

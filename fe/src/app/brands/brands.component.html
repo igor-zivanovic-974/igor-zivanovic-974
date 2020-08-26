@@ -1,0 +1,20 @@
+<div class="content-container mx-auto">
+    <p class="text-secondary mt-2">
+        <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+    </p>
+    <h1 class="mx-xs-3">{{'Partners' | translate}}</h1>
+
+    <div class="row">
+        <div [ngClass]="{'col-6': b.main===true, 'col-3': b.main!==true}" *ngFor="let b of brands">
+            <div class="card m-3 p-3">
+                <!-- <div class="card-header">
+                    <h5>{{b.name}}</h5>
+                </div> -->
+                <div class="card-body">
+                    <img src="{{b.image}}" alt="{{b.name}}" [ngClass]="{'big-brand-image': b.main===true, 'small-brand-image': b.main!==true}">
+                    <!-- <p>{{b.description}}</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

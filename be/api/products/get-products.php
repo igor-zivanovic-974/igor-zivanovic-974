@@ -8,6 +8,7 @@ header("Vary: Origin, Access-Control-Request-Headers");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE");
 header("Access-Control-Allow-Headers: cache-control,expires,pragma");
+header('Content-Type: text/html; charset=utf-8');
 
 // include database and object files
 include_once "../../config/db.php";
@@ -56,6 +57,7 @@ if ($num > 0) {
             "barcode" => $barcode,
             "dimension" => $dimension,
             "weight" => $weight,
+            "image" => $image,
             "active" => $active
         );
 

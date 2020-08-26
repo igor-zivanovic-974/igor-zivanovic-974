@@ -1,70 +1,13 @@
-<!-- <style>
-  .move {
-    width: 12.5rem;
-  }
-
-  @media (min-width: 1200px) {
-    .move {
-      margin-left: 150px;
-      margin-top: -10px;
-    }
-  }
-
-  @media (max-width: 1199px) {
-    .move {
-      width: 100%;
-    }
-  }
-
-  .dropdown-menu {
-    margin-top: 0;
-  }
-
-  .dropdown-menu .dropdown-toggle::after {
-    vertical-align: middle;
-    border-left: 4px solid;
-    border-bottom: 4px solid transparent;
-    border-top: 4px solid transparent;
-  }
-
-  .dropdown-menu .dropdown .dropdown-menu {
-    left: 100%;
-    top: 0%;
-    margin: 0 20px;
-    border-width: 0;
-  }
-
-  .dropdown-menu .dropdown .dropdown-menu.left {
-    right: 100%;
-    left: auto;
-  }
-
-  .dropdown-menu > li a:hover,
-  .dropdown-menu > li.show {
-    background: #007bff;
-    color: white;
-  }
-
-  .dropdown-menu > li.show > a {
-    color: white;
-  }
-
-  @media (max-width: 768px) {
-    .dropdown-menu .dropdown .dropdown-menu {
-      margin: 0;
-      border-width: 1px;
-    }
-  }
-</style> -->
-<div class="w-100 top-row bg-primary text-white">
-  <div class="row w-75 mx-auto">
-    <div class="col-3 offset-xl-6 pt-2">
+<div class="w-100 top-row bg--primary text-white">
+  <!-- top-row -->
+  <div class="row content-container mx-auto">
+    <div class="col-8 pl-2 text-xs-left col-xl-8 text-xl-right pr-3 py-2">
       Kontakt telefon: 011 3820 300, 011 3820 301
     </div>
-    <div class="col-3 pt-2">
-      <span class="mr-3"><a class="text-white" (click)="setLanguage('Sr')">Sr</a></span>
+    <div class="col-4  text-xs-right col-xl-4 text-xl-left  py-2">
+      <span class="mr-3"><a class="text-white" (click)="setLanguage('Sr')" [ngClass]="{'text-secondary': currentLanguage === 'Sr' }">SR</a></span>
       <span class="mr-3">|</span>
-      <span class="mr-5"><a class="text-white" (click)="setLanguage('En')">En</a></span>
+      <span class="mr-5"><a class="text-white" (click)="setLanguage('En')" [ngClass]="{'text-secondary': currentLanguage === 'En' }">EN</a></span>
       <i class="fa fa-user mr-4" *ngIf="isLoggedIn" routerLink="/administration"></i>
       <i class="fa fa-user mr-4" *ngIf="!isLoggedIn" routerLink="/login"></i>
       <i class="fas fa-sign-out-alt" *ngIf="isLoggedIn" (click)="logout()" title="{{ 'Logout' | translate }}"></i>
@@ -72,9 +15,11 @@
     </div>
   </div>
 </div>
+
+<!-- navigation -->
 <div class="w-100">
-  <div class="w-75 mx-auto sticky-top bg-light border-bottom">
-    <nav class="navbar navbar-expand-xl navbar-light bg-light py-2">
+  <div class="content-container mx-auto sticky-top bg-light border-bottom">
+    <nav class="navbar navbar-expand-xl navbar-light bg-light pt-2">
       <a class="navbar-brand" routerLink="/home">
         <img src="assets/images/bepro-logo.png" class="logo" alt="" />
       </a>
@@ -84,187 +29,23 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link btn text-left menu-text mr-2" routerLink="/home">
-              {{ 'Home' | translate }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn text-left menu-text mr-2" routerLink="/about">
-              {{ 'About' | translate }}</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-left menu-text btn  mr-2" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{ 'Products' | translate }}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink="/home">Obrada betona</a>
-              <a class="dropdown-item" routerLink="/home">Vertikalni transport i dodatna oprema</a>
-              <a class="dropdown-item" routerLink="/home">Proizvodnja, transport i ugradnja betona</a>
-              <a class="dropdown-item" routerLink="/home">Oprema</a>
-              <a class="dropdown-item" routerLink="/home">Oplatni sistemi</a>
-              <a class="dropdown-item" routerLink="/home">Sabijanje tla</a>
-              <a class="dropdown-item" routerLink="/home">Hidraulicni uredjaji i kompresori</a>
-              <a class="dropdown-item" routerLink="/home">Agregati i pumpe</a>
-              <a class="dropdown-item" routerLink="/home">Armiracki program</a>
-              <a class="dropdown-item" routerLink="/home">Uredjaji i alati za secenje</a>
-              <a class="dropdown-item" routerLink="/home">Rucni alat i merni uredjaji</a>
-              <a class="dropdown-item" routerLink="/home">Zastitna oprema</a>
+          <li *ngFor="let m of menuItems" class="nav-item" [ngClass]="{'dropdown': m.isDropdown}">
+            <a class="nav-link text-left btn menu-text mr-2" routerLink="{{m.link}}" *ngIf="!m.isDropdown">
+              {{ m.name | translate }}</a>
+            <a class="nav-link dropdown-toggle text-left btn menu-text mr-2" *ngIf="m.isDropdown" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ m.name | translate }}</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="m.values">
+              <a *ngFor="let v of m.values" class="dropdown-item menu-text" (click)="goTo(v.link)">{{v.name | translate}}</a>
             </div>
-
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link btn text-left menu-text mr-2" routerLink="/brands">
-              {{ 'Brands' | translate }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn text-left menu-text mr-2" routerLink="/renting">
-              {{ 'Renting' | translate }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn text-left menu-text mr-2" routerLink="/contact">
-              {{ 'Contact' | translate }}</a>
-          </li>
-          <li class="nav-item">
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2 mr-xl-4" type="search" placeholder="Pretraga" aria-label="Pretraga">
-              <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pretraga</button> -->
+            <form class="form-inline my-2 my-lg-0" #f="ngForm">
+              <input class="form-control mr-sm-2 mr-xl-2" type="search" [(ngModel)]="searchValue" name="searchValue" required placeholder="{{'Search' | translate}}">
+              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="search()" [disabled]="f.invalid"><i class="fa fa-search"></i></button>
             </form>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link btn text-left mr-5" *ngIf="!isLoggedIn" routerLink="/login">
-              <i class="fa fa-user-cog"></i>
-            </a>
-            <a class="nav-link btn text-left mr-5" *ngIf="isLoggedIn" routerLink="/administration">
-              <i class="fa fa-user-cog"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-link btn-small menu-text text-secondary" *ngIf="isLoggedIn" (click)="logout()" title="{{ 'Logout' | translate }}">
-              <i class="fas fa-sign-out-alt"></i>
-            </button>
-            <button class="btn" *ngFor="let language of langs" (click)="setLanguage(language)">
-              {{ language }}
-            </button>
-          </li> -->
         </ul>
       </div>
     </nav>
   </div>
 </div>
-
-<!-- <script src="assets/js/bootnavbar.js"></script> -->
-<!-- <script>
-  (function($) {
-    var defaults = {
-      sm: 540,
-      md: 720,
-      lg: 960,
-      xl: 1140,
-      navbar_expand: 'lg',
-      animation: true,
-      animateIn: 'fadeIn'
-    };
-    $.fn.bootnavbar = function(options) {
-      var screen_width = $(document).width();
-      settings = $.extend(defaults, options);
-
-      if (screen_width >= settings.lg) {
-        $(this)
-          .find('.dropdown')
-          .hover(
-            function() {
-              $(this).addClass('show');
-              $(this)
-                .find('.dropdown-menu')
-                .first()
-                .addClass('show');
-              if (settings.animation) {
-                $(this)
-                  .find('.dropdown-menu')
-                  .first()
-                  .addClass('animated ' + settings.animateIn);
-              }
-            },
-            function() {
-              $(this).removeClass('show');
-              $(this)
-                .find('.dropdown-menu')
-                .first()
-                .removeClass('show');
-            }
-          );
-      }
-
-      $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-        if (
-          !$(this)
-            .next()
-            .hasClass('show')
-        ) {
-          $(this)
-            .parents('.dropdown-menu')
-            .first()
-            .find('.show')
-            .removeClass('show');
-        }
-        var $subMenu = $(this).next('.dropdown-menu');
-        $subMenu.toggleClass('show');
-
-        $(this)
-          .parents('li.nav-item.dropdown.show')
-          .on('hidden.bs.dropdown', function(e) {
-            $('.dropdown-submenu .show').removeClass('show');
-          });
-
-        return false;
-      });
-    };
-  })(jQuery);
-</script>
-<script>
-  $('#navbar').bootnavbar();
-</script> -->
-
-<!-- <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="https://github.com/ngx-rocket" translate>APP_NAME</a>
-    <button class="navbar-toggler" type="button" aria-controls="navbar-menu"
-            aria-label="Toggle navigation" (click)="toggleMenu()" [attr.aria-expanded]="!menuHidden">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div id="navbar-menu" class="collapse navbar-collapse float-xs-none" [ngbCollapse]="menuHidden">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link text-uppercase" routerLink="/home" routerLinkActive="active">
-          <i class="fas fa-home"></i>
-          <span translate>Home</span>
-        </a>
-        <a class="nav-item nav-link text-uppercase" routerLink="/about" routerLinkActive="active">
-          <i class="fas fa-question-circle"></i>
-          <span translate>About</span>
-        </a>
-      </div>
-      <div class="navbar-nav ml-auto">
-        <div class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
-          <a id="language-dropdown" class="nav-link" ngbDropdownToggle>{{currentLanguage}}</a>
-          <div ngbDropdownMenu aria-labelledby="language-dropdown">
-            <button class="dropdown-item" *ngFor="let language of languages" (click)="setLanguage(language)">
-              {{language}}
-            </button>
-          </div>
-        </div>
-        <div class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
-          <a id="user-dropdown" class="nav-link" ngbDropdownToggle>
-            <i class="fas fa-user-circle"></i>
-          </a>
-          <div ngbDropdownMenu aria-labelledby="user-dropdown">
-            <h6 class="dropdown-header">
-              <span translate>Logged in as</span> <b>{{username}}</b></h6>
-            <div class="dropdown-divider"></div>
-            <button class="dropdown-item" (click)="logout()" translate>Logout</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-</header> -->

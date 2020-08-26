@@ -1,88 +1,84 @@
 <!-- footer  -->
-<div class="w-100 text-white bg--gradient-blue py-5" id="footer">
-  <div class="row w-75 mx-auto">
-    <div class="col-md-4 p-3">
-      <div class="card bg-transparent">
-        <div class="card-body">
-          <h5 class="card-title border-bottom border-white pb-2">Kontakt</h5>
-          <p class="card-text footer-text">
-            <b>Izložbeno-prodajni salon</b><br />
-            ul. Grcica Milenka 39, Beograd<br />
-          </p>
-          <p class="card-text footer-text">
-            <b>Radno vreme</b><br />
-            08:00 - 16:00 Ponedeljak - Petak
-          </p>
-          <p class="card-text footer-text">
-            <b>Kontakt informacije</b><br />
-            Prodaja:<br />
-            +381 11 38 20 300<br />
-            +381 11 38 20 301<br />
-            prodaja@bepro.rs<br />
-            office@bepro.rs
-          </p>
-          <p class="card-text footer-text">
-            Servis:<br />
-            +381 63 297-110<br />
-            servis@bepro.rs
-          </p>
+<div class="w-100 bg--primary py-2" id="footer">
+  <div class="content-container mx-auto">
+    <div class="row px-0">
 
-          <p class="card-text footer-text">
-            <i class="fab fa-facebook mr-3"></i>
-            <i class="fab fa-instagram"></i>
-          </p>
+      <!-- data -->
+      <div class="col-12 col-xl-6 p-3">
+        <div class="row">
+          <!-- address / working hours -->
+          <div class="col-12 col-md-4 text-white mb-3 pl-3">
+            <div class="">
+              <b>BE PRO Build</b><br />
+              <span class="text-light">
+                ul. Grčića Milenka 39<br />
+                11000 Beograd<br />
+              </span>
+            </div>
+
+            <div class="mt-3">
+              <b>Radno vreme</b><br />
+              <span class="text-light">08:00 - 16:00<br /></span>
+            </div>
+            <div class="text-light">
+              <i class="fab fa-facebook-square mr-3" (click)="goFacebook()"></i>
+              <i class="fab fa-instagram" (click)="goInstagram()"></i>
+            </div>
+          </div>
+
+          <!-- contact -->
+          <div class="col-12 col-md-8 text-white mb-3 pl-3">
+            <div class="row">
+              <div class="col-12">
+                <b>Kontakt</b><br />
+              </div>
+
+              <div class="col-4">
+                <div class="text-light">
+                  Kontakt telefoni</div>
+              </div>
+
+              <div class="col-8">
+                <div class="text-light">
+                  +381 11 38 20 300<br />
+                  +381 11 38 20 301<br />
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-4">
+                Email:<br />
+                Prodaja:<br />
+                Servis:<br />
+                Rentiranje:<br />
+                Polovna oprema<br />
+              </div>
+              <div class="col-8">
+                office@bepro.rs<br />
+                prodaja@bepro.rs<br />
+                servis@bepro.rs<br />
+                rentiranje@bepro.rs<br />
+                polovnaoprema@bepro.rs<br />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- <div class="col-md-4 p-3">
-      <div class="card bg-transparent">
-        <div class="card-body">
-          <h5 class="card-title border-bottom border-white pb-2">Asortiman</h5>
-          <ul class="list-unstyled">
-            <li><a class="text-white footer-link" href=""> Obrada betona</a></li>
-            <li><a class="text-white footer-link" href="">Vertikalni transport i dodatna oprema</a></li>
-            <li><a class="text-white footer-link" href="">Proizvodnja, transport i ugradnja betona</a></li>
 
-            <li><a class="text-white footer-link" href="">Oprema</a></li>
-            <li><a class="text-white footer-link" href="">Oplatni sistemi</a></li>
-            <li><a class="text-white footer-link" href="">Sabijanje tla</a></li>
-
-            <li><a class="text-white footer-link" href="">Hidraulicni uredjaji i kompresori</a></li>
-            <li><a class="text-white footer-link" href="">Agregati i pumpe</a></li>
-            <li><a class="text-white footer-link" href="">Armiracki program</a></li>
-
-            <li><a class="text-white footer-link" href="">Uredjaji i alati za secenje</a></li>
-            <li><a class="text-white footer-link" href="">Rucni alat i merni uredjaji</a></li>
-            <li><a class="text-white footer-link" href="">Zastitna oprema</a></li>
-          </ul>
-          <h5 class="card-title border-bottom border-white pb-2">
-            <a class="text-white footer-link" href="">Dobavljaci</a>
-          </h5>
-          <h5 class="card-title border-bottom border-white py-2">
-            <a class="text-white footer-link" href="">Rentiranje i polovna oprema</a>
-          </h5>
-        </div>
-      </div>
-    </div> -->
-    <div class="col-md-4 p-3">
-      <div class="card bg-transparent">
-        <div class="card-body">
-          <h5 class="card-title border-bottom border-white pb-2">Pisite nam</h5>
-          <form class="mt-3">
-            <input type="text" class="form-control mb-2" name="name" placeholder="Ime i prezime" />
-            <input type="email" class="form-control mb-2" name="email" placeholder="Email" />
-            <textarea name="message" class="form-control mb-2" id="message" cols="10" rows="5" placeholder="Poruka"></textarea>
-            <button class="btn btn-outline-white">Posalji</button>
-          </form>
-        </div>
+      <!-- map -->
+      <div class="col-12 col-xl-6 p-0">
+        <!-- <img src="assets/images/mapa-bepro3.png" class="w-100"> -->
+        <!-- <iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=20.487028956413273%2C44.790496756920604%2C20.492393374443058%2C44.793169251833824&amp;layer=mapnik&amp;marker=44.791833019846315%2C20.489708483219147" style="border: 1px solid black"></iframe><br /><small><a href="https://www.openstreetmap.org/?mlat=44.79183&amp;mlon=20.48971#map=18/44.79183/20.48971">View Larger Map</a></small> -->
+        <iframe style='width:100%;height:200px;border:0;z-index:10000' src='https://www.planplus.rs/mapa/koordinate/44.79172648385019,20.489606522369726/13'></iframe>
       </div>
     </div>
   </div>
 </div>
 
 <!-- copyright  -->
-<div class="w-100 copyright bg-darkest-blue text-white text-center">
-  <div class="mx-auto pt-2">
-    &copy; BE PRO BUILD D.O.O. Sva prava zadrzana
+<div class="w-100 copyright bg--primary border-top border-white text-white text-center">
+  <div class="mx-auto text-white pt-2">
+    &copy; {{'copyright' | translate}}
   </div>
 </div>

@@ -1,442 +1,60 @@
-<div class="w-75 mx-auto">
-  <!-- <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-    <ngb-panel title="Simple">
-      <ng-template ngbPanelContent>
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-        moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-        keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-        butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-        haven't heard of them accusamus labore sustainable VHS.
-      </ng-template>
-    </ngb-panel>
-    <ngb-panel>
-      <ng-template ngbPanelTitle>
-        <span>&#9733; <b>Fancy</b> title &#9733;</span>
-      </ng-template>
-      <ng-template ngbPanelContent>
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-        moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-        keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-        butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-        haven't heard of them accusamus labore sustainable VHS.
-      </ng-template>
-    </ngb-panel>
-    <ngb-panel title="Disabled">
-      <ng-template ngbPanelContent class="bg-warning">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-        moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-        keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-        butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-        haven't heard of them accusamus labore sustainable VHS.
-      </ng-template>
-    </ngb-panel>
-  </ngb-accordion> -->
+<div class="content-container mx-auto">
+  <p class="text-secondary mt-2">
+    <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+  </p>
+  <h1 class="mx-xs-3 mb-5">{{'Contact' | translate}}</h1>
+  <div class="row">
+    <div class="col-6">
+      <!-- <h2>Pisite nam</h2> -->
+      <form [formGroup]="form" class="my-3">
+        <div class="form-group">
+          <!-- <label for="email">{{'common.email' | translate}}</label> -->
+          <input type="email" class="form-control" id="email" formControlName="email" placeholder="{{'common.email' | translate}}" [ngClass]="{ 'is-invalid': form.controls.email.errors && form.get('email').touched}">
+          <small class="invalid-feedback" [hidden]="!form.controls.email.errors?.required && !form.get('email').touched">{{'common.required' | translate}}</small>
+        </div>
+        <div class="form-group">
+          <!-- <label for="subject">{{'common.subject' | translate}}</label> -->
+          <input type="text" class="form-control" id="subject" name="subject" formControlName="subject" placeholder="{{'common.subject' | translate}}" [ngClass]="{ 'is-invalid': form.controls.subject.errors && form.get('subject').touched}">
+          <small class="invalid-feedback" [hidden]="!form.controls.subject.errors?.required && !form.get('subject').touched">{{'common.required' | translate}}</small>
+        </div>
+        <div class="form-group">
+          <!-- <label for="message">{{'common.message' | translate}}</label> -->
+          <textarea class="form-control" id="message" formControlName="message" placeholder="{{'common.message' | translate}}" rows="10" [ngClass]="{ 'is-invalid': form.controls.message.errors && form.get('message').touched}"></textarea>
+          <small class="invalid-feedback" [hidden]="!form.controls.message.errors?.required && !form.get('message').touched">{{'common.required' | translate}}</small>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" [disabled]="!form.valid || !form.controls.invalidCheck.value" (click)="submit()">{{'common.send' | translate}}</button>
+          <div class="form-check d-inline ml-5">
+            <input class="form-check-input" class="mt-2 mr-2" type="checkbox" formControlName="invalidCheck" value="" id="invalidCheck">
+            <label class="form-check-label text-muted" for="invalidCheck">
+              {{'common.not-robot' | translate}}
+            </label>
+            <small class="invalid-feedback" [hidden]="!form.controls.invalidCheck.errors?.required && !form.get('invalidCheck').touched">{{'common.required' | translate}}</small>
+          </div>
+        </div>
 
-  <div id="accordion">
-    <div class="card">
-      <div class="card-header bg-secondary collapsed" id="headingOne">
-        <h5 class="mb-0">
-          <button class="btn btn-link btn-block text-white no-decoration" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-            Oprema
-          </button>
-        </h5>
-      </div>
 
-      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-xs-12 col-xl-3">
-              <span class="text-uppercase border-bottom">Laserski navođene vibroletve</span>
-              <ul>
-                <li>
-                  <a class="" href=""> Mali
-                    <div><img class="image" src="assets/images/1.png" /></div>
-                  </a>
-                </li>
-                <li>
-                  <a href=""> Srednji
-                    <div><img class="image" src="assets/images/2.png" /></div>
-                  </a>
-                </li>
-                <li>
-                  <a href=""> Veliki
-                    <div><img class="image" src="assets/images/3.png" /></div>
-                  </a></li>
-                <li>
-                  <a href=""> Posipači
-                    <div><img class="image" src="assets/images/4.png" /></div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-xl-2">
-              <span class="text-uppercase border-bottom">Helikopteri finišeri</span>
-              <ul>
-                <li>
-                  <a href=""> Solo
-                    <div><img class="image" src="assets/images/5.png" /></div>
-                  </a>
-                </li>
-                <li>
-                  <a href=""> Dupli
-                    <div><img class="image" src="assets/images/6.png" /></div>
-                  </a>
-                </li>
-                <li>
-                  <a href=""> Prateća oprema
-                    <div><img class="image" src="assets/images/7.png" /></div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-xl-2">
-              <span class="text-uppercase border-bottom">Vibroletve</span>
-              <ul>
-                <li>
-                  <a href=""> Beton
-                    <div><img class="image" src="assets/images/5.png" /></div>
-                  </a>
-                </li>
-                <li>
-                  <a href=""> Košuljica
-                    <div><img class="image" src="assets/images/2.png" /></div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-xl-2">
-              <span class="text-uppercase border-bottom">Ručni alati</span>
-              <ul>
-                <li>
-                  <a href=""> Letve
-                    <div><img class="image" src="assets/images/1.png" /></div>
-                  </a>
-                </li>
-                <li>
-                  <a href=""> Gleterice
-                    <div><img class="image" src="assets/images/4.png" /></div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-xl-2">
-              <span class="text-uppercase border-bottom">Ostalo</span>
-              <ul>
-                <li>
-                  <a href=""> Mašine za brušenje i glodanje poda, ind. Ususivači
-                    <div><img class="image" src="assets/images/5.png" /></div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      </form>
     </div>
-    <div class="card">
-      <div class="card-header bg-warning" id="headingTwo">
-        <h5 class="mb-0">
-          <button class="btn btn-link btn-block text-left text-dark no-decoration collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Oplatni sistemi
-          </button>
-        </h5>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-xs-12 col-xl-3">
-              <span class="text-uppercase border-bottom">Kranovi</span>
-              <ul>
-                <li>Niske rotacije - samomontirajući</li>
-                <li>Visoke rotacije</li>
-                <li>Oprema</li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-xl-3">
-              <span class="text-uppercase border-bottom">Liftovi i platforme</span>
-              <ul>
-                <li>Transport materijala</li>
-                <li>Transport ljudi i materijala</li>
-                <li>Fasadne platforme</li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-xl-3">
-              <span class="text-uppercase border-bottom">Dizalice</span>
-              <ul>
-                <li>do 200kg</li>
-                <li>preko 200 kg</li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-xl-3">
-              <span class="text-uppercase border-bottom">Oprema</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header bg-info" id="headingThree">
-        <h5 class="mb-0">
-          <button class="btn btn-link btn-block text-white no-decoration collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            Proizvodnja, transport i ugradnja betona
-          </button>
-        </h5>
-      </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-xs-12 col-xl-2"><span class="text-uppercase"><a href="">Mešalice</a></span> </div>
-            <div class="col-xs-12 col-xl-2"><span class="text-uppercase"><a href="">Mini mikseri</a></span></div>
-            <div class="col-xs-12 col-xl-2"><span class="text-uppercase"><a href="">Damperi</a></span></div>
-            <div class="col-xs-12 col-xl-2"><span class="text-uppercase"><a href="">Pumpe za beton</a></span></div>
-            <div class="col-xs-12 col-xl-2"><span class="text-uppercase"><a href="">Vibratori za beton</a></span></div>
-          </div>
-        </div>
-      </div>
+    <div class="col-6 px-5">
+      <h2 class="mt-2">{{'about.company' | translate}}</h2>
+      <p>
+        <span class="mr-3">{{'about.pin'| translate}}</span>
+        <span>12345678</span>
+      </p>
+      <p>
+        <span class="mr-3">{{'about.registration'| translate}}</span>
+        <span>12345678</span>
+      </p>
+      <p>
+        <span class="mr-3">{{'about.code'| translate}}</span>
+        <span>12345678</span>
+      </p>
+      <p>
+        <span class="mr-3">{{'about.account-number'| translate}}</span>
+        <span>12345678</span>
+      </p>
     </div>
   </div>
 
-  <accordion [isAnimated]="true">
-    <accordion-group heading="Obrada betona">
-      <!--<div>
-                  
-                <button class="btn btn-link btn-block bg-secondary text-white clearfix" accordion-heading type="button">
-                    <div class="pull-left float-left">Obrada betona</div>
-                    <span class="badge  float-right pull-right">
-                        <img src="assets/images/1.png" style="height: 50px;">
-                    </span>
-                </button>
-            </div>-->
-      <div class="row">
-        <div class="col-xs-12 col-xl-2">
-          Laserski navođene vibroletve
-          <ul>
-            <li>
-
-              <a class="" href="">
-                Mali
-                <div><img class="image" src="assets/images/1.png" /></div>
-              </a>
-            </li>
-            <li>
-              <a href=""> Srednji
-                <div><img class="image" src="assets/images/2.png" /></div>
-              </a>
-            </li>
-            <li><a href=""> Veliki</a></li>
-            <li><a href=""> Posipači</a></li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-xl-2">
-          Helikopteri finišeri
-          <ul>
-            <li>Solo</li>
-            <li>Dupli</li>
-            <li>Prateća oprema</li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-xl-2">
-          Vibroletve
-          <ul>
-            <li>Beton</li>
-            <li>Košuljica</li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-xl-2">
-          Ručni alati
-          <ul>
-            <li>Letve</li>
-            <li>Gleterice</li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-xl-2">
-          Ostalo
-          <ul>
-            <li>Mašine za brušenje i glodanje poda, ind. Ususivači</li>
-          </ul>
-        </div>
-      </div>
-    </accordion-group>
-    <accordion-group heading="Vertikalni transport i oprema">
-      <!-- <p></p> -->
-      <div class="row">
-        <div class="col-xs-12 col-xl-3">
-          Kranovi
-          <ul>
-            <li>Niske rotacije - samomontirajući</li>
-            <li>Visoke rotacije</li>
-            <li>Oprema</li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-xl-3">
-          Liftovi i platforme
-          <ul>
-            <li>Transport materijala</li>
-            <li>Transport ljudi i materijala</li>
-            <li>Fasadne platforme</li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-xl-3">
-          Dizalice
-          <ul>
-            <li>do 200kg</li>
-            <li>preko 200 kg</li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-xl-3">
-          Oprema
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-      </div>
-    </accordion-group>
-    <accordion-group heading="Proizvodnja, transport i ugradnja betona">
-      <div class="row">
-        <div class="col-xs-12 col-xl-2">Mešalice</div>
-        <div class="col-xs-12 col-xl-2">Mini mikseri</div>
-        <div class="col-xs-12 col-xl-2">Damperi</div>
-        <div class="col-xs-12 col-xl-2">Pumpe za beton</div>
-        <div class="col-xs-12 col-xl-2">Vibratori za beton</div>
-      </div>
-    </accordion-group>
-    <accordion-group heading="Oprema">
-      <div class="row">
-        <div class="col-xs-12 col-xl-auto">
-          Platforme i merdevine
-          <ul>
-            <li>Aluminijumske platforme</li>
-            <li>Čelične platforme</li>
-            <li>Merdevine</li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-xl-auto">
-          Skela
-          <ul>
-            <li>Ramovska</li>
-            <li>Multifunkcionalno</li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-xl-auto">
-          Podupirači
-          <ul>
-            <li>Bojeni</li>
-            <li>Pocinkovani</li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-xl-auto">Kolica</div>
-        <div class="col-xs-12 col-xl-auto">Cevi za šut</div>
-      </div>
-    </accordion-group>
-    <accordion-group heading="Oplatni sistemi">
-      <div class="row">
-        <div class="col-xs-12 col-xl-3">Sistemska oplata</div>
-        <div class="col-xs-12 col-xl-3">Žuta oplata</div>
-        <div class="col-xs-12 col-xl-3">Rovna oplata</div>
-        <div class="col-xs-12 col-xl-3">
-          Metalna galanterija
-          <ul>
-            <li>Stezna glave i žabice</li>
-            <li>Vezivni elementi žute oplate</li>
-            <li>Navrtke i rebraste šipke</li>
-            <li>Plastični distanceri</li>
-            <li>Betonski distanceri</li>
-          </ul>
-        </div>
-      </div>
-    </accordion-group>
-    <accordion-group heading="Sabijanje tla">
-      <div class="row">
-        <div class="col-xs-12 col-xl-auto">1</div>
-        <div class="col-xs-12 col-xl-auto">2</div>
-        <div class="col-xs-12 col-xl-auto">3</div>
-        <div class="col-xs-12 col-xl-auto">4</div>
-      </div>
-    </accordion-group>
-    <accordion-group heading="Hidraulični uređaji i kompresori">
-      <div class="row">
-        <div class="col-xs-12 col-xl-auto">1</div>
-        <div class="col-xs-12 col-xl-auto">2</div>
-        <div class="col-xs-12 col-xl-auto">3</div>
-        <div class="col-xs-12 col-xl-auto">4</div>
-      </div>
-    </accordion-group>
-    <accordion-group heading="Agregati i pumpe">
-      <div class="row">
-        <div class="col-xs-12 col-xl-auto">1</div>
-        <div class="col-xs-12 col-xl-auto">2</div>
-        <div class="col-xs-12 col-xl-auto">3</div>
-        <div class="col-xs-12 col-xl-auto">4</div>
-      </div>
-    </accordion-group>
-    <accordion-group heading="Armirački program">
-      <div class="row">
-        <div class="col-xs-12 col-xl-auto">1</div>
-        <div class="col-xs-12 col-xl-auto">2</div>
-        <div class="col-xs-12 col-xl-auto">3</div>
-        <div class="col-xs-12 col-xl-auto">4</div>
-      </div>
-    </accordion-group>
-    <accordion-group heading="Uređaji i alati za sečenje">
-      <div class="row">
-        <div class="col-xs-12 col-xl-auto">1</div>
-        <div class="col-xs-12 col-xl-auto">2</div>
-        <div class="col-xs-12 col-xl-auto">3</div>
-        <div class="col-xs-12 col-xl-auto">4</div>
-      </div>
-    </accordion-group>
-    <accordion-group heading="Ručni alat i merni uređaji">
-      <div class="row">
-        <div class="col-xs-12 col-xl-auto">1</div>
-        <div class="col-xs-12 col-xl-auto">2</div>
-        <div class="col-xs-12 col-xl-auto">3</div>
-        <div class="col-xs-12 col-xl-auto">4</div>
-      </div>
-    </accordion-group>
-    <accordion-group heading="Zaštitna oprema">
-      <div class="row">
-        <div class="col-xs-12 col-xl-auto">1</div>
-        <div class="col-xs-12 col-xl-auto">2</div>
-        <div class="col-xs-12 col-xl-auto">3</div>
-        <div class="col-xs-12 col-xl-auto">4</div>
-      </div>
-    </accordion-group>
-  </accordion>
 </div>
-<!-- <p>contact works!</p>
-<div class="btn-group" dropdown [autoClose]="false" container="body">
-    <button id="button-nested" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-nested">
-        This dropdown has nested submenu <span class="caret"></span>
-    </button>
-    <ul id="dropdown-nested" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-nested">
-        <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action</a></li>
-
-        <li role="menuitem" dropdown triggers="mouseover" placement="right" container="body">
-            <a dropdownToggle class="dropdown-item dropdown-toggle" (click)="false">Hover me for nested dropdown <span class="caret"></span></a>
-            <ul *dropdownMenu class="dropdown-menu" role="menu">
-                <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action</a></li>
-                <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action1</a></li>
-                <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action2</a></li>
-            </ul>
-        </li>
-
-        <li role="menuitem" dropdown triggers="mouseover" placement="right" container="body">
-            <a dropdownToggle class="dropdown-item dropdown-toggle" (click)="false">Hover me for nested dropdown <span class="caret"></span></a>
-            <ul *dropdownMenu class="dropdown-menu" role="menu">
-                <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action</a></li>
-                <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action1</a></li>
-                <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action2</a></li>
-            </ul>
-        </li>
-
-        <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Something else here</a></li>
-        <li class="divider dropdown-divider"></li>
-        <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Separated link</a></li>
-    </ul>
-</div> -->

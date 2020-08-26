@@ -41,20 +41,21 @@ if ($num > 0) {
         extract($row);
 
         $product_item = array(
-            "id" => $id,
+            "id" => intval($id),
             "name" => $name,
             "alias" => $alias,
             "description" => html_entity_decode($description),
-            "groupId" => $groupId,
+            "groupId" => intval($groupId),
             "groupName" => $groupName,
-            "categoryId" => $categoryId,
+            "categoryId" => intval($categoryId),
             "categoryName" => $categoryName,
-            "subcategoryId" => $categoryId,
-            "subcategoryName" => $categoryName,
+            "subcategoryId" => intval($categoryId),
+            "subcategoryName" => $subcategoryName,
             "price" => $price,
             "barcode" => $barcode,
             "dimension" => $dimension,
             "weight" => $weight,
+            "image" => $image,
             "active" => $active
         );
 
@@ -69,7 +70,8 @@ if ($num > 0) {
 } else {
 
     // set response code - 404 Not found
-    http_response_code(404);
+    // http_response_code(404);
+    http_response_code(200);
 
     // tell the user no products found
     echo json_encode(

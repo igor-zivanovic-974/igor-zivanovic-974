@@ -11,7 +11,7 @@ header("Access-Control-Allow-Headers: cache-control,expires,pragma");
 
 // include database and object files
 include_once "../../config/db.php";
-include_once "../../models/category.php";
+include_once "../../models/subcategory.php";
 
 
 // instantiate database and category object
@@ -19,18 +19,18 @@ $database = new DatabaseConnection();
 $db = $database->getConnection();
 
 // initialize object
-$category = new category($db);
+$subcategory = new Subcategory($db);
 
 // query categories
-$stmt = $category->read();
+$stmt = $subcategory->read();
 $num = $stmt->rowCount();
 
 // check if more than 0 record found
 if ($num > 0) {
 
     // categories array
-    $categories_arr = array();
-    $categories_arr["items"] = array();
+    $subcategories_arr = array();
+    $subcategories_arr["items"] = array();
 
     // retrieve our table contents
     // fetch() is faster than fetchAll()
@@ -41,19 +41,20 @@ if ($num > 0) {
         // just $name only
         extract($row);
 
-        $category_item = array(
-            "id" => $id,
-            "name" => $name
+        $subcategory_item = array(
+            "id" => intval($id),
+            "name" => $name,
+            "categoryId" => intval($categoryId)
         );
 
-        array_push($categories_arr["items"], $category_item);
+        array_push($subcategories_arr["items"], $subcategory_item);
     }
 
     // set response code - 200 OK
     http_response_code(200);
 
     // show categories data in json format
-    echo json_encode($categories_arr);
+    echo json_encode($subcategories_arr);
 } else {
 
     // set response code - 404 Not found

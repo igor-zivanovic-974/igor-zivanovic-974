@@ -31,9 +31,9 @@ $category->readOne();
 if ($category->id != null) {
     // create array
     $category_arr = array(
-        "id" => $category->id,
+        "id" => intval($category->id),
         "name" => $category->name,
-        "groupId" => $category->groupId,
+        "groupId" => intval($category->groupId),
 
     );
 

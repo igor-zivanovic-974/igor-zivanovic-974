@@ -42,8 +42,9 @@ if ($num > 0) {
         extract($row);
 
         $category_item = array(
-            "id" => $id,
-            "name" => $name
+            "id" => intval($id),
+            "name" => $name,
+            "groupId" => intval($groupId)
         );
 
         array_push($categories_arr["items"], $category_item);

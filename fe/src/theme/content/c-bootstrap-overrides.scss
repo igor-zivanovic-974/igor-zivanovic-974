@@ -1,3 +1,5 @@
+@import "../bepro-variables.scss";
+
 .container-fluid {
   margin: 0 !important;
   padding: 0 !important;
@@ -26,6 +28,10 @@
   }
 }
 
+.btn-white {
+  background-color: white !important;
+}
+
 .bg-darkest-blue {
   background-color: $bepro-dark-o-blue; // #022C51; // rgba(2, 44, 81, 0.8);
 }
@@ -39,5 +45,70 @@
 }
 
 .bg--primary {
-  background-color: $bepro-primary; // #1464b6; /* #6699ff; */
+  background-color: $bepro-primary !important; // #1464b6; /* #6699ff; */
+}
+
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.text-primary {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: $bepro-primary !important;
+}
+
+h1,
+h2 {
+  font-weight: 400;
+  display: inline-block;
+  padding-bottom: 5px;
+  position: relative;
+  color: $bepro-primary;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    border-bottom: 3px solid $bepro-primary;
+  }
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.2rem !important;
+  display: inine-block;
+  padding-bottom: 5px;
+  position: relative;
+  color: $bepro-primary;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    border-bottom: 3px solid $bepro-primary;
+  }
+
+  h4,
+  h5 {
+    color: $bepro-primary;
+    // font-weight: 400;
+    // font-size: 1.1rem !important;
+  }
 }

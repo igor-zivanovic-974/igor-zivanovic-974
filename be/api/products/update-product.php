@@ -21,7 +21,7 @@ $product = new Product($db);
 $data = json_decode(file_get_contents("php://input"));
 
 // set ID property of product to be edited
-$product->id = $data->id;
+$product->id = intval($data->id);
 
 // set product property values
 $product->name = $data->name;
@@ -34,6 +34,7 @@ $product->price = $data->price;
 $product->barcode = $data->barcode;
 $product->dimension = $data->dimension;
 $product->weight = $data->weight;
+$product->image = $data->image;
 $product->active = $data->active;
 
 // update the product

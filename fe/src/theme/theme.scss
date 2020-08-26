@@ -6,3 +6,12 @@
 @import "theme/content/c-bootstrap-overrides.scss";
 @import "theme/content/c-home.scss";
 @import "theme/content/c-general.scss";
+
+.b {
+  border: solid 1px red;
+}
+
+.button:focus,
+input:focus {
+  outline: none;
+}

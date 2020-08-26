@@ -31,10 +31,9 @@ $subcategory->readOne();
 if ($subcategory->id != null) {
     // create array
     $subcategory_arr = array(
-        "id" => $subcategory->id,
+        "id" => intval($subcategory->id),
         "name" => $subcategory->name,
-        "categoryId" => $subcategory->categoryId,
-
+        "categoryId" => intval($subcategory->categoryId),
     );
 
     // set response code - 200 OK

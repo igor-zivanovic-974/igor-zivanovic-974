@@ -7,10 +7,23 @@ import { ContactService } from './contact.service';
 // import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from '@app/shared';
+import { TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [ContactComponent],
-  imports: [CommonModule, AccordionModule, NgbModule, ContactRoutingModule], // BsDropdownModule
+  imports: [
+    CommonModule,
+    SharedModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AccordionModule,
+    NgbModule,
+    TranslateModule,
+    ContactRoutingModule], // BsDropdownModule
   providers: [ContactService]
 })
-export class ContactModule {}
+export class ContactModule { }

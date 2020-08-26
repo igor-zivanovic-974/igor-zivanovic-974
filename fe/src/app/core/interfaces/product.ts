@@ -1,14 +1,14 @@
-export class Product {
+export interface Product {
   id: number;
   name: string;
   alias: string;
   description: string;
   groupId: number;
-  groupName: string;
+  groupName?: string;
   categoryId: number;
-  categoryName: string;
+  categoryName?: string;
   subcategoryId: number;
-  subcategoryName: string;
+  subcategoryName?: string;
   price: number;
   barcode: string;
   dimension: string;

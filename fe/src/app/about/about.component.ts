@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { environment } from '@env/environment';
 import { AboutService } from './about.service';
-import { Product } from '@app/core/models/product';
+import { Product } from '@app/core/interfaces/product';
+import { Breadcrumb } from '@app/core/interfaces/breadcrumb';
 
 @Component({
   selector: 'app-about',
@@ -12,11 +13,13 @@ import { Product } from '@app/core/models/product';
 export class AboutComponent implements OnInit {
   version: string | null = environment.version;
   products: Product[] = [];
+  breadcrumbs: Breadcrumb[] = [];
 
-  constructor(private service: AboutService) {}
+  constructor(private service: AboutService) { }
 
   ngOnInit() {
     this.getProducts();
+    this.breadcrumbs = this.service.breadcrumbs;
   }
 
   getProducts() {

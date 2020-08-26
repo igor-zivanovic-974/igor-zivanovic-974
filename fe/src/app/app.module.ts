@@ -17,18 +17,19 @@ import { AboutModule } from './about/about.module';
 import { ContactModule } from './contact/contact.module';
 import { ProductsModule } from './products/products.module';
 import { RentingModule } from './renting/renting.module';
-import { SuppliersModule } from './suppliers/suppliers.module';
+import { BrandsModule } from './brands/brands.module';
 import { AdministrationModule } from './administration/administration.module';
-// import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { NotifierModule } from 'angular-notifier';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { UsedModule } from './used/used.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    NgImageSliderModule,
     FormsModule,
-    // BsDropdownModule.forRoot(),
     NotifierModule,
     AccordionModule.forRoot(),
     HttpClientModule,
@@ -43,7 +44,8 @@ import { NotifierModule } from 'angular-notifier';
     ContactModule,
     ProductsModule,
     RentingModule,
-    SuppliersModule,
+    UsedModule,
+    BrandsModule,
     LoginModule,
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
@@ -51,4 +53,4 @@ import { NotifierModule } from 'angular-notifier';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -31,7 +31,7 @@ $group->readOne();
 if ($group->id != null) {
     // create array
     $group_arr = array(
-        "id" => $group->id,
+        "id" => intval($group->id),
         "name" => $group->name,
 
     );

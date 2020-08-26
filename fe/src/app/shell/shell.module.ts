@@ -8,9 +8,13 @@ import { ShellComponent } from './shell.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { HeaderService } from './header/header.service';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  imports: [CommonModule, TranslateModule, NgbModule, BsDropdownModule, RouterModule],
-  declarations: [HeaderComponent, ShellComponent, FooterComponent]
+  imports: [CommonModule, TranslateModule, BrowserModule, FormsModule, NgbModule, BsDropdownModule, RouterModule],
+  declarations: [HeaderComponent, ShellComponent, FooterComponent],
+  providers: [HeaderService]
 })
 export class ShellModule {}

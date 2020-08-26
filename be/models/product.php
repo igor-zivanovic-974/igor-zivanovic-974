@@ -22,6 +22,7 @@ class Product
     public $barcode;
     public $dimension;
     public $weight;
+    public $image;
     public $active;
 
     // constructor with $db as database connection
@@ -33,20 +34,20 @@ class Product
     // read products
     function read()
     {
-
+        // CHARACTER SET utf8
         // select all query
         $query = "SELECT p.id, p.name as name, p.alias, p.description, p.group_id as groupId, pc.name as groupName, 
                     p.category_id as categoryId, psc.name as categoryName, p.subcategory_id as subcategoryId, psc.name as subcategoryName, 
-                    p.price, p.barcode, p.dimension, p.weight, p.active
+                    p.price, p.barcode, p.dimension, p.weight, p.image, p.active
                     FROM products p
                     LEFT JOIN product_groups pg ON pg.id = p.group_id 
                     LEFT JOIN product_categories pc ON pc.id = p.category_id 
                     LEFT JOIN product_subcategories psc ON psc.id = p.subcategory_id
-                    WHERE p.active = true";
+                    WHERE p.active = true  COLLATE utf8_general_ci";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);
-
+        // $stmt->set_charset('utf-8');
         // execute query
         $stmt->execute();
 
@@ -56,13 +57,40 @@ class Product
 
 
     // read products by category ID
+    function readByGroupId()
+    {
+
+        // select all query
+        $query = "SELECT p.id, p.name as name, p.alias, p.description, p.group_id as groupId, pc.name as groupName, 
+                    p.category_id as categoryId, psc.name as categoryName, p.subcategory_id as subcategoryId, psc.name as subcategoryName, 
+                    p.price, p.barcode, p.dimension, p.weight, p.image, p.active
+                    FROM products p
+                    LEFT JOIN product_groups pg ON pg.id = p.group_id 
+                    LEFT JOIN product_categories pc ON pc.id = p.category_id 
+                    LEFT JOIN product_subcategories psc ON psc.id = p.subcategory_id
+                    WHERE p.active = true AND p.group_id = ?";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // bind id of product to be updated
+        $stmt->bindParam(1, $this->groupId);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+
+    // read products by category ID
     function readByCategoryId()
     {
 
         // select all query
         $query = "SELECT p.id, p.name as name, p.alias, p.description, p.group_id as groupId, pc.name as groupName, 
                     p.category_id as categoryId, psc.name as categoryName, p.subcategory_id as subcategoryId, psc.name as subcategoryName, 
-                    p.price, p.barcode, p.dimension, p.weight, p.active
+                    p.price, p.barcode, p.dimension, p.weight, p.image, p.active
                     FROM products p
                     LEFT JOIN product_groups pg ON pg.id = p.group_id 
                     LEFT JOIN product_categories pc ON pc.id = p.category_id 
@@ -90,7 +118,7 @@ class Product
         // select all query
         $query = "SELECT p.id, p.name as name, p.alias, p.description, p.group_id as groupId, pc.name as groupName, 
                     p.category_id as categoryId, psc.name as categoryName, p.subcategory_id as subcategoryId, psc.name as subcategoryName, 
-                    p.price, p.barcode, p.dimension, p.weight, p.active
+                    p.price, p.barcode, p.dimension, p.weight, p.image, p.active
                     FROM products p
                     LEFT JOIN product_groups pg ON pg.id = p.group_id 
                     LEFT JOIN product_categories pc ON pc.id = p.category_id 
@@ -117,7 +145,7 @@ class Product
         // select all query
         $query = "SELECT p.id, p.name as name, p.alias, p.description, p.group_id as groupId, pc.name as groupName, 
                     p.category_id as categoryId, psc.name as categoryName, p.subcategory_id as subcategoryId, psc.name as subcategoryName, 
-                    p.price, p.barcode, p.dimension, p.weight, p.active
+                    p.price, p.barcode, p.dimension, p.weight, p.image, p.active
                     FROM products p
                     LEFT JOIN product_groups pg ON pg.id = p.group_id 
                     LEFT JOIN product_categories pc ON pc.id = p.category_id 
@@ -155,6 +183,7 @@ class Product
                 barcode=:barcode,
                 dimension=:dimension,
                 weight=:weight,
+                image=:image,
                 active=:active";
 
 
@@ -162,17 +191,18 @@ class Product
         $stmt = $this->conn->prepare($query);
 
         // sanitize
-        $this->name = htmlspecialchars(strip_tags($this->name));
-        $this->alias = htmlspecialchars(strip_tags($this->alias));
-        $this->description = htmlspecialchars(strip_tags($this->description));
-        $this->groupId = htmlspecialchars(strip_tags($this->groupId));
-        $this->categoryId = htmlspecialchars(strip_tags($this->categoryId));
-        $this->subcategoryId = htmlspecialchars(strip_tags($this->subcategoryId));
-        $this->price = htmlspecialchars(strip_tags($this->price));
-        $this->barcode = htmlspecialchars(strip_tags($this->barcode));
-        $this->dimension = htmlspecialchars(strip_tags($this->dimension));
-        $this->weight = htmlspecialchars(strip_tags($this->weight));
-        $this->active = htmlspecialchars(strip_tags($this->active));
+        $this->name = htmlspecialchars(strip_tags($this->name, ENT_NOQUOTES, "UTF-8"));
+        $this->alias = htmlspecialchars(strip_tags($this->alias, ENT_NOQUOTES, "UTF-8"));
+        $this->description = htmlspecialchars(strip_tags($this->description, ENT_NOQUOTES, "UTF-8"));
+        $this->groupId = htmlspecialchars(strip_tags($this->groupId, ENT_NOQUOTES, "UTF-8"));
+        $this->categoryId = htmlspecialchars(strip_tags($this->categoryId, ENT_NOQUOTES, "UTF-8"));
+        $this->subcategoryId = htmlspecialchars(strip_tags($this->subcategoryId, ENT_NOQUOTES, "UTF-8"));
+        $this->price = htmlspecialchars(strip_tags($this->price, ENT_NOQUOTES, "UTF-8"));
+        $this->barcode = htmlspecialchars(strip_tags($this->barcode, ENT_NOQUOTES, "UTF-8"));
+        $this->dimension = htmlspecialchars(strip_tags($this->dimension, ENT_NOQUOTES, "UTF-8"));
+        $this->weight = htmlspecialchars(strip_tags($this->weight, ENT_NOQUOTES, "UTF-8"));
+        $this->image = htmlspecialchars(strip_tags($this->image, ENT_NOQUOTES, "UTF-8"));
+        $this->active = htmlspecialchars(strip_tags($this->active, ENT_NOQUOTES, "UTF-8"));
 
 
 
@@ -187,6 +217,7 @@ class Product
         $stmt->bindParam(":barcode", $this->barcode);
         $stmt->bindParam(":dimension", $this->dimension);
         $stmt->bindParam(":weight", $this->weight);
+        $stmt->bindParam(":image", $this->image);
         $stmt->bindParam(":active", $this->active);
 
         // execute query
@@ -199,8 +230,6 @@ class Product
 
 
 
-
-
     // used when filling up the update product form
     function readOne()
     {
@@ -208,7 +237,7 @@ class Product
         // query to read single record
         $query = "SELECT p.id, p.name as name, p.alias, p.description, p.group_id as groupId, pc.name as groupName, 
                     p.category_id as categoryId, psc.name as categoryName, p.subcategory_id as subcategoryId, psc.name as subcategoryName, 
-                    p.price, p.barcode, p.dimension, p.weight, p.active
+                    p.price, p.barcode, p.dimension, p.weight, p.image, p.active
                     FROM products p
                     LEFT JOIN product_groups pg ON pg.id = p.group_id 
                     LEFT JOIN product_categories pc ON pc.id = p.category_id 
@@ -246,6 +275,7 @@ class Product
         $this->barcode = $row['barcode'];
         $this->dimension = $row['dimension'];
         $this->weight = $row['weight'];
+        $this->image = $row['image'];
         $this->active = $row['active'];
 
         if ($stmt->execute()) {
@@ -254,9 +284,6 @@ class Product
 
         return false;
     }
-
-
-
 
 
 
@@ -277,6 +304,7 @@ class Product
                     barcode=:barcode,
                     dimension=:dimension,
                     weight=:weight,
+                    image=:image,
                     active=:active 
                 WHERE id = :id";
 
@@ -294,6 +322,7 @@ class Product
         $this->barcode = htmlspecialchars(strip_tags($this->barcode));
         $this->dimension = htmlspecialchars(strip_tags($this->dimension));
         $this->weight = htmlspecialchars(strip_tags($this->weight));
+        $this->image = htmlspecialchars(strip_tags($this->image));
         $this->active = htmlspecialchars(strip_tags($this->active));
         $this->id = htmlspecialchars(strip_tags($this->id));
 
@@ -308,6 +337,7 @@ class Product
         $stmt->bindParam(":barcode", $this->barcode);
         $stmt->bindParam(":dimension", $this->dimension);
         $stmt->bindParam(":weight", $this->weight);
+        $stmt->bindParam(":image", $this->image);
         $stmt->bindParam(":active", $this->active);
         $stmt->bindParam(':id', $this->id);
 
@@ -318,8 +348,6 @@ class Product
 
         return false;
     }
-
-
 
 
 

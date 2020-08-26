@@ -5,10 +5,18 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';
 import { AboutService } from './about.service';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
-  imports: [CommonModule, TranslateModule, AboutRoutingModule],
+  imports: [
+    CommonModule,
+    AccordionModule,
+    SharedModule,
+    TranslateModule,
+    TranslateModule,
+    AboutRoutingModule],
   declarations: [AboutComponent],
   providers: [AboutService]
 })
-export class AboutModule {}
+export class AboutModule { }

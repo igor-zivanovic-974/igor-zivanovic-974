@@ -81,6 +81,7 @@ i {
   .menu-text {
     font-size: 1rem !important;
     font-weight: 400 !important;
+    color: $bepro-primary !important;
   }
 
   .huge-text-1 {
@@ -96,11 +97,9 @@ i {
 }
 
 .menu-text {
-  font-size: 1.5rem;
-  text-align: left;
-  font-weight: 500;
-  color: $bepro-primary;
-  // color: $blue;
+  text-align: left !important;
+  font-weight: 500 !important;
+  color: $bepro-primary !important;
 }
 
 .container-fluid {
@@ -126,7 +125,7 @@ i {
 
 #content .card {
   /* background: rgba(0, 0, 0, 0.3); */
-  height: 500px;
+  height: 350px;
   margin: 20px;
   border: solid 1px #ccc;
   border-radius: 10px;
@@ -141,24 +140,9 @@ i {
 
 #content .card-body {
   background: #fff;
-  height: 300px;
+  height: 250px;
 }
 
-.footer-link {
-  width: auto;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.footer-link:hover {
-  width: auto;
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.footer-text {
-  font-size: 1rem;
-}
 /* $primary: purple !important; */
 
 .card-img-overlay {
@@ -167,7 +151,9 @@ i {
 }
 
 .card-img {
-  margin-top: 60px;
+  // margin-top: 60px;
+  width: 250px;
+  height: 250px;
 }
 
 // .transparent-overlay {
@@ -185,6 +171,8 @@ i {
 
 .card-title {
   margin-bottom: 0;
+  font-weight: 500;
+  color: $bepro-primary;
 }
 
 .fixed-height {

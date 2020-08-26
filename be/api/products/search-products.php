@@ -55,6 +55,7 @@ if ($num > 0) {
             "barcode" => $barcode,
             "dimension" => $dimension,
             "weight" => $weight,
+            "image" => $image,
             "active" => $active
         );
 

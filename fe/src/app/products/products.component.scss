@@ -1,0 +1,50 @@
+@import "../../theme/bepro-variables.scss";
+
+.list-group-item {
+  border: none !important;
+  padding: 0;
+  margin: -10px;
+}
+
+.scrollable {
+  overflow: scroll;
+  height: 545px;
+}
+
+.btn,
+button {
+  border-radius: none !important;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.btn-block {
+  margin-top: 0px;
+}
+
+h5 button:focus {
+  outline: none !important;
+}
+
+.btn-secondary,
+.btn-light,
+.btn-link {
+  border-radius: 0 !important;
+
+  &:focus,
+  &:active {
+    outline: none !important;
+  }
+}
+
+.no-items {
+  font-size: 2rem;
+  text-align: center;
+  color: $bepro-dark-blue;
+}
+
+.btn-secondary {
+  border: none !important;
+}
